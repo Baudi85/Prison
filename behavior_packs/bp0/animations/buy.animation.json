@@ -1,0 +1,158 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+	
+	
+	"animation.buy1.buy":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/function buy_item1" ],
+			"1.0":[ "@s myth:clear_buy" ]
+		}
+	},
+	"animation.reset.buy":{
+		"animation_length": 1.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "@s myth:clear_buy" ]
+		}
+	},
+	
+	"animation.buy2.buy":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/function buy_item2" ],
+			"1.0":[ "@s myth:clear_buy" ]
+
+		}
+	},
+	"animation.buy3.buy":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/function buy_item3" ],
+			"1.0":[ "@s myth:clear_buy" ]
+
+		}
+	},
+	"animation.buy4.buy":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/function buy_item4" ],
+			"1.0":[ "@s myth:clear_buy" ]
+
+		}
+	},
+	"animation.buy5.buy":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/function buy_item5" ],
+			"1.0":[ "@s myth:clear_buy" ]
+
+		}
+	},
+	"animation.buy6.buy":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/function buy_item6" ],
+			"1.0":[ "@s myth:clear_buy" ]
+
+		}
+	},
+	"animation.buy7.buy":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/function buy_item7" ],
+			"1.0":[ "@s myth:clear_buy" ]
+
+		}
+	},
+	"animation.buy8.buy":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/function buy_item8" ],
+			"1.0":[ "@s myth:clear_buy" ]
+
+		}
+	},
+	"animation.buy9.buy":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/function buy_item9" ],
+			"1.0":[ "@s myth:clear_buy" ]
+
+		}
+	},
+	"animation.buy10.buy":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/function buy_item10" ],
+			"1.0":[ "@s myth:clear_buy" ]
+
+		}
+	},
+	"animation.buy11.buy":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/function buy_item11" ],
+			"1.0":[ "@s myth:clear_buy" ]
+
+		}
+	},
+	"animation.buy12.buy":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/function buy_item12" ],
+			"1.0":[ "@s myth:clear_buy" ]
+
+		}
+	},
+	"animation.buy13.buy":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/function buy_item13" ],
+			"1.0":[ "@s myth:clear_buy" ]
+
+		}
+	},
+	"animation.buy14.buy":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/function buy_item14" ],
+			"1.0":[ "@s myth:clear_buy" ]
+
+		}
+	},
+	"animation.buy15.buy":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/function buy_item15" ],
+			"1.0":[ "@s myth:clear_buy" ]
+
+		}
+	},
+	"animation.buy16.buy":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/function buy_item16" ],
+			"1.0":[ "@s myth:clear_buy" ]
+
+		}
+	}
+  }
+}

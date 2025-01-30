@@ -1,0 +1,108 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {	
+		
+		//WEAPON
+		"controller.animation.myth.weapon": {
+			"initial_state": "weaponless",
+			"states": {
+				"weaponless": {
+					"on_entry": [ "@s myth:damage_1" ],
+					"transitions": [
+						{ "axe_1_1": "query.get_equipped_item_name == 'axe_1'" },
+						{ "axe_1_2": "query.get_equipped_item_name == 'axe_1_2'" },
+						{ "axe_1_3": "query.get_equipped_item_name == 'axe_1_3'" },
+						{ "axe_2_1": "query.get_equipped_item_name == 'axe_2_1'" },
+						{ "axe_2_2": "query.get_equipped_item_name == 'axe_2_2'" },
+						{ "axe_2_3": "query.get_equipped_item_name == 'axe_2_3'" },
+						{ "axe_3_1": "query.get_equipped_item_name == 'axe_3_1'" },
+						{ "axe_3_2": "query.get_equipped_item_name == 'axe_3_2'" },
+						{ "axe_3_3": "query.get_equipped_item_name == 'axe_3_3'" },
+						{ "dagger_1_1": "query.get_equipped_item_name == 'dagger_1_1'" },
+						{ "dagger_1_2": "query.get_equipped_item_name == 'dagger_1_2'" },
+						{ "dagger_1_3": "query.get_equipped_item_name == 'dagger_1_3'" },
+						{ "dagger_2_1": "query.get_equipped_item_name == 'dagger_2_1'" },
+						{ "dagger_2_2": "query.get_equipped_item_name == 'dagger_2_2'" },
+						{ "dagger_2_3": "query.get_equipped_item_name == 'dagger_2_3'" },
+						{ "dagger_3_1": "query.get_equipped_item_name == 'dagger_3_1'" },
+						{ "dagger_3_2": "query.get_equipped_item_name == 'dagger_3_2'" },
+						{ "dagger_3_3": "query.get_equipped_item_name == 'dagger_3_3'" },
+						{ "sword_1_1": "query.get_equipped_item_name == 'sword_1_1'" },
+						{ "sword_1_2": "query.get_equipped_item_name == 'sword_1_2'" },
+						{ "sword_1_3": "query.get_equipped_item_name == 'sword_1_3'" },
+						{ "sword_2_1": "query.get_equipped_item_name == 'sword_2_1'" },
+						{ "sword_2_2": "query.get_equipped_item_name == 'sword_2_2'" },
+						{ "sword_2_3": "query.get_equipped_item_name == 'sword_2_3'" },
+						{ "sword_3_1": "query.get_equipped_item_name == 'sword_3_1'" },
+						{ "sword_3_2": "query.get_equipped_item_name == 'sword_3_2'" },
+						{ "sword_3_3": "query.get_equipped_item_name == 'sword_3_3'" },
+						{ "hammer_1_1": "query.get_equipped_item_name == 'hammer_1_1'" },
+						{ "hammer_1_2": "query.get_equipped_item_name == 'hammer_1_2'" },
+						{ "hammer_1_3": "query.get_equipped_item_name == 'hammer_1_3'" },
+						{ "hammer_2_1": "query.get_equipped_item_name == 'hammer_2_1'" },
+						{ "hammer_2_2": "query.get_equipped_item_name == 'hammer_2_2'" },
+						{ "hammer_2_3": "query.get_equipped_item_name == 'hammer_2_3'" },
+						{ "hammer_3_1": "query.get_equipped_item_name == 'hammer_3_1'" },
+						{ "hammer_3_2": "query.get_equipped_item_name == 'hammer_3_2'" },
+						{ "hammer_3_3": "query.get_equipped_item_name == 'hammer_3_3'" },
+						{ "noob_sword": "query.get_equipped_item_name == 'noob_sword'" },
+						{ "misc_fork": "query.get_equipped_item_name == 'misc_fork'" },
+						{ "misc_frying_pan": "query.get_equipped_item_name == 'misc_frying_pan'" },
+						{ "misc_patriot": "query.get_equipped_item_name == 'misc_patriot'" },
+						{ "misc_pirate_hook": "query.get_equipped_item_name == 'misc_pirate_hook'" },
+						{ "misc_finger": "query.get_equipped_item_name == 'misc_finger'" }
+					]
+				},
+				
+				//WEAPON DAMAGE
+				"axe_1_1": { 		     "on_entry": [ "@s myth:damage_7" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'axe_1_1'" } ] },
+				"axe_1_2": { 		     "on_entry": [ "@s myth:damage_7" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'axe_1_2'" } ] },
+				"axe_1_3": { 		     "on_entry": [ "@s myth:damage_7" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'axe_1_3'" } ] },
+				"axe_2_1": { 		     "on_entry": [ "@s myth:damage_9" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'axe_2_1'" } ] },
+				"axe_2_2": { 		     "on_entry": [ "@s myth:damage_9" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'axe_2_2'" } ] },
+				"axe_2_3": { 		     "on_entry": [ "@s myth:damage_9" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'axe_2_3'" } ] },
+				"axe_3_1": { 		     "on_entry": [ "@s myth:damage_11" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'axe_3_1'" } ] },
+				"axe_3_2": { 		     "on_entry": [ "@s myth:damage_11" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'axe_3_2'" } ] },
+				"axe_3_3": { 		     "on_entry": [ "@s myth:damage_11" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'axe_3_3'" } ] },
+
+				"dagger_1_1": { 		 "on_entry": [ "@s myth:damage_4" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'dagger_1_1'" } ] },
+				"dagger_1_2": { 	     "on_entry": [ "@s myth:damage_4" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'dagger_1_2'" } ] },
+				"dagger_1_3": { 	     "on_entry": [ "@s myth:damage_4" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'dagger_1_3'" } ] },
+				"dagger_2_1": { 	     "on_entry": [ "@s myth:damage_6" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'dagger_2_1'" } ] },
+				"dagger_2_2": { 	     "on_entry": [ "@s myth:damage_6" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'dagger_2_2'" } ] },
+				"dagger_2_3": { 	     "on_entry": [ "@s myth:damage_6" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'dagger_2_3'" } ] },
+				"dagger_3_1": { 	     "on_entry": [ "@s myth:damage_8" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'dagger_3_1'" } ] },
+				"dagger_3_2": { 	     "on_entry": [ "@s myth:damage_8" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'dagger_3_2'" } ] },
+				"dagger_3_3": { 	     "on_entry": [ "@s myth:damage_8" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'dagger_3_3'" } ] },
+				
+				"sword_1_1": { 	         "on_entry": [ "@s myth:damage_6" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'sword_1_1'" } ] },
+				"sword_1_2": { 	         "on_entry": [ "@s myth:damage_6" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'sword_1_2'" } ] },
+				"sword_1_3": { 	         "on_entry": [ "@s myth:damage_6" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'sword_1_3'" } ] },
+				"sword_2_1": { 	         "on_entry": [ "@s myth:damage_8" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'sword_2_1'" } ] },
+				"sword_2_2": { 	         "on_entry": [ "@s myth:damage_8" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'sword_2_2'" } ] },
+				"sword_2_3": { 	         "on_entry": [ "@s myth:damage_8" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'sword_2_3'" } ] },
+				"sword_3_1": { 	         "on_entry": [ "@s myth:damage_10" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'sword_3_1'" } ] },
+				"sword_3_2": { 	         "on_entry": [ "@s myth:damage_10" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'sword_3_2'" } ] },
+				"sword_3_3": { 	         "on_entry": [ "@s myth:damage_10" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'sword_3_3'" } ] },
+				
+				"hammer_1_1": { 		 "on_entry": [ "@s myth:damage_5" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'hammer_1_1'" } ] },
+				"hammer_1_2": { 	     "on_entry": [ "@s myth:damage_5" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'hammer_1_2'" } ] },
+				"hammer_1_3": { 	     "on_entry": [ "@s myth:damage_5" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'hammer_1_3'" } ] },
+				"hammer_2_1": { 	     "on_entry": [ "@s myth:damage_7" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'hammer_2_1'" } ] },
+				"hammer_2_2": { 	     "on_entry": [ "@s myth:damage_7" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'hammer_2_2'" } ] },
+				"hammer_2_3": { 	     "on_entry": [ "@s myth:damage_7" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'hammer_2_3'" } ] },
+				"hammer_3_1": { 	     "on_entry": [ "@s myth:damage_9" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'hammer_3_1'" } ] },
+				"hammer_3_2": { 	     "on_entry": [ "@s myth:damage_9" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'hammer_3_2'" } ] },
+				"hammer_3_3": { 	     "on_entry": [ "@s myth:damage_9" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'hammer_3_3'" } ] },
+				
+				"noob_sword": { 	     "on_entry": [ "@s myth:damage_3" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'noob_sword'" } ] },
+				"misc_fork": { 		     "on_entry": [ "@s myth:damage_15" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'misc_fork'" } ] },
+				"misc_frying_pan": { 	 "on_entry": [ "@s myth:damage_7" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'misc_frying_pan'" } ] },
+				"misc_patriot": { 	     "on_entry": [ "@s myth:damage_0" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'misc_patriot'" } ] },
+				"misc_pirate_hook": { 	 "on_entry": [ "@s myth:damage_9" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'misc_pirate_hook'" } ] },
+				"misc_finger": { 	     "on_entry": [ "@s myth:damage_1" ], "transitions":[ { "weaponless": "query.get_equipped_item_name != 'misc_finger'" } ] }
+			}
+		}
+		
+	}
+}

@@ -1,0 +1,18 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+	
+      "identifier": "myth:mine1_upgrade_1",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/object/upgrade_1_2" },
+      "geometry": { "default": "geometry.upgrade" },
+      "render_controllers": [ "controller.render.myth" ],
+      "spawn_egg": {
+        "base_color": "#e3f3f4",
+		"overlay_color": "#95cb69"
+      }
+	  
+    }
+  }
+}

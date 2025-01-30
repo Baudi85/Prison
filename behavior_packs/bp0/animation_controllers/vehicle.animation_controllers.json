@@ -1,0 +1,111 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		
+		//FALL
+		"controller.animation.myth.vehicle.fall": {
+			"initial_state": "rider",
+			"states": {
+				"rider": {
+					"transitions": [ { "riderless": "!query.has_rider" } ]
+				},
+				"riderless": {
+					"on_entry": [
+						"/execute @s ~ ~-0.5 ~-0.9 effect @e[type=myth:helicopter,r=3,c=1] levitation 0 10 true",
+						"/execute @s ~ ~-0.5 ~-0.9 effect @e[type=myth:helicopter,r=3,c=1] slow_falling 99999 0 true"
+					],
+					"transitions": [ { "rider": "query.has_rider" } ]
+				}
+			}
+		},
+		
+		//WATER
+		"controller.animation.myth.vehicle.water": {
+			"initial_state": "dry",
+			"states": {
+				"dry": {
+					"transitions": [ { "water": "query.is_in_water" } ]
+				},
+				"water": {
+					"animations": [ "myth:water_timer" ],
+					"transitions": [ { "dry": "!query.is_in_water" } ]
+				}
+			}
+		},
+		
+		//HELICOPTER
+		"controller.animation.myth.helicopter.rotor" : {
+			"initial_state" : "idle",
+			"states" : {
+				"idle" : {
+					"transitions" : [ { "fly" : "query.has_rider || !query.is_on_ground" } ]
+				},
+				"fly": {
+					"animations": [ "myth:rotor" ],
+					"transitions": [ { "idle": "!query.has_rider && query.is_on_ground" } ],
+					"on_exit": [ "/stopsound @a[r=10] furniture.myth.helicopter.drive" ]
+				}
+			}
+		},
+		
+		//MONEY TANK
+		"controller.animation.myth.money_tank.cannon": {
+			"initial_state": "load",
+			"states": {
+				"load": {
+					"transitions": [ { "default": "query.is_riding" } ]
+				},
+				"default": {
+					"on_entry": [ "/execute @s ~ ~-1 ~ event entity @e[type=myth:money_tank,r=3,c=1] myth:cannon_still" ],
+					"transitions": [ { "cannon_right": "query.is_jumping && query.is_riding" } ]
+				},
+				"cannon_right": {
+					"on_entry": [ "/execute @s ~ ~-1 ~ event entity @e[type=myth:money_tank,r=3,c=1] myth:cannon_right" ],
+					"transitions": [
+						{ "cannon_still": "!query.is_jumping" },
+						{ "default": "!query.is_riding" }
+					]
+				},
+				"cannon_still": {
+					"on_entry": [ "/execute @s ~ ~-1 ~ event entity @e[type=myth:money_tank,r=3,c=1] myth:cannon_still" ],
+					"transitions": [
+						{ "cannon_left": "query.is_jumping" },
+						{ "default": "!query.is_riding" }
+					]
+				},
+				"cannon_left": {
+					"on_entry": [ "/execute @s ~ ~-1 ~ event entity @e[type=myth:money_tank,r=3,c=1] myth:cannon_left" ],
+					"transitions": [ { "default": "!query.is_jumping || !query.is_riding" } ]
+				}
+			}
+		},
+		
+		"controller.animation.myth.money_tank.shoot": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [ { "shoot": "variable.attack_time" } ],
+					"on_exit": [ "variable.tank_shoot = query.life_time + 2.0;" ]
+				},
+				"shoot": {
+					"on_entry": [ "/function tools/vehicle/shoot" ],
+					"transitions": [ { "default": "query.life_time > variable.tank_shoot" } ]
+				}
+			}
+		},
+		
+		"controller.animation.myth.money_tank.rider": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [ { "no_rider": "!query.has_rider" } ]
+				},
+				"no_rider": {
+					"on_entry": [ "@s myth:cannon_still" ],
+					"transitions": [ { "default": "query.has_rider" } ]
+				}
+			}
+		}
+		
+	}
+}

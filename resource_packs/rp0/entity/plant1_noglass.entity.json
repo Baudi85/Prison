@@ -1,0 +1,18 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+	
+      "identifier": "myth:plant1_noglass",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/object/plant1_noglass" },
+      "geometry": { "default": "geometry.plant1_noglass" },
+      "render_controllers": [ "controller.render.myth" ],
+      "spawn_egg": {
+        "base_color": "#e3f3f4",
+		    "overlay_color": "#95cb69"
+      }
+	  
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+	
+      "identifier": "myth:music_entity",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/summoned_imp" },
+      "geometry": { "default": "geometry.summoned_imp" },
+      "render_controllers": [ "controller.render.myth" ],
+      "spawn_egg": {
+        "base_color": "#e3f3f4",
+		    "overlay_color": "#95cb69"
+      }
+	  
+    }
+  }
+}

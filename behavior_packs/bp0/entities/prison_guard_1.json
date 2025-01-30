@@ -1,0 +1,277 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "myth:prison_guard_1",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+	  "animations": {
+		"death": "animation.myth.death.prison_guard_base1",
+		"controller_attack": "controller.animation.myth.prison_guard_base.attack",
+		"command": "animation.death.coins"
+      },
+      "scripts": {
+        "animate": [
+          { "death": "query.mark_variant" },
+		  "controller_attack"
+        ]
+      }
+    },
+
+	"component_groups": {
+	  
+	  //REMOVE
+	  "myth:remove": { "minecraft:instant_despawn": {} },
+	  
+	  //REMOVE BEHAVIORS
+	  "myth:remove_behaviors": {
+	    "minecraft:behavior.delayed_attack": {},
+	    "minecraft:behavior.random_stroll": {},
+        "minecraft:behavior.look_at_player": {},
+        "minecraft:behavior.random_look_around": {}
+	  },
+	  
+	  //DEATH
+	  "myth:death": {
+		"minecraft:mark_variant": { "value": 1 },
+		"minecraft:behavior.nearest_attackable_target": {},
+		"minecraft:type_family": {},
+		"minecraft:movement": { "value": 0.0 },
+		"minecraft:movement.basic": { "max_turn": 0.0 },
+		"minecraft:attack": { "damage": 0.0 },
+		"minecraft:timer": {},
+		"minecraft:collision_box": { "width": 0, "height": 0 }
+	  },
+	  
+	  //PATH
+	  "myth:pathfind": {
+		"minecraft:behavior.delayed_attack": {
+          "priority": 3,
+		  "attack_duration": 10.00,
+		  "hit_delay_pct": 0.90,
+          "speed_multiplier": 1.0,
+		  "reach_multiplier": 2.8,
+          "track_target": false
+        },
+		"minecraft:behavior.random_stroll": {
+          "priority": 4,
+          "speed_multiplier": 1
+        },
+        "minecraft:behavior.look_at_player": {
+          "priority": 5,
+          "look_distance": 6,
+          "probability": 0.02
+        },
+        "minecraft:behavior.random_look_around": {
+          "priority": 6
+        }
+	  },
+	  
+	  //BASIC
+	  "myth:basic_ready": {
+		"minecraft:skin_id": { "value": 1 },
+		"minecraft:timer": { "looping": true, "randomInterval": true, "time": [2, 4], "time_down_event": { "event": "myth:new_attack" } }
+	  },
+	  
+	  "myth:basic_timer": {
+	    "minecraft:skin_id": { "value": 2 },
+		"minecraft:timer": { "looping": true, "randomInterval": false, "time": 0.25, "time_down_event": { "event": "myth:basic_attack" } }
+	  },
+	  
+	  "myth:basic_attack": {
+	    "minecraft:skin_id": { "value": 3 },
+		"minecraft:timer": { "looping": true, "randomInterval": true, "time": [1.0, 1.3], "time_down_event": { "event": "myth:new_attack" } },
+		"minecraft:rideable": {
+		  "seat_count": 1,
+		  "family_types": [ "damage_impact" ],
+		  "seats": [ { "position": [ 0.0, 0.0, 2.0 ], "rotate_rider_by": 0, "lock_rider_rotation": 0 } ]
+	    },
+	    "minecraft:addrider": {
+		  "entity_type": "myth:damage_impact",
+		  "spawn_event": "myth:prison_guard_base_basic_attack"
+	    }
+	  },
+	  
+	  //HEAVY
+	  "myth:heavy_ready": {
+		"minecraft:skin_id": { "value": 4 },
+		"minecraft:timer": { "looping": true, "randomInterval": true, "time": [2, 4], "time_down_event": { "event": "myth:new_attack" } }
+	  },
+	  
+	  "myth:heavy_timer": {
+	    "minecraft:skin_id": { "value": 5 },
+		"minecraft:timer": { "looping": true, "randomInterval": false, "time": 0.25, "time_down_event": { "event": "myth:heavy_attack" } }
+	  },
+	  
+	  "myth:heavy_attack": {
+	    "minecraft:skin_id": { "value": 6 },
+		"minecraft:timer": { "looping": true, "randomInterval": true, "time": [1.0, 1.3], "time_down_event": { "event": "myth:new_attack" } },
+		"minecraft:rideable": {
+		  "seat_count": 1,
+		  "family_types": [ "damage_impact" ],
+		  "seats": [ { "position": [ 0.0, 0.0, 2.0 ], "rotate_rider_by": 0, "lock_rider_rotation": 0 } ]
+	    },
+	    "minecraft:addrider": {
+		  "entity_type": "myth:damage_impact",
+		  "spawn_event": "myth:prison_guard_base_heavy_attack"
+	    }
+	  }
+	  
+	},
+	
+    "components": {
+	
+	  //TRAITS
+      "minecraft:type_family": {
+        "family": [ "monster", "mob" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.9,
+        "height": 1.9
+      },
+	  "minecraft:attack": {
+	    "damage": 1.5
+	  },
+	  "minecraft:health": {
+          "value": {
+            "range_min": 16,
+            "range_max": 20
+          }
+      },
+	  "minecraft:knockback_resistance": {
+        "value": 0.6
+      },
+	  "minecraft:movement": {
+        "value": {
+          "range_min": 0.20,
+          "range_max": 0.22
+        }
+      },
+	  
+	  //BASIC COMPONENTS
+	  "minecraft:mark_variant": {
+	    "value": 0
+	  },
+	  "minecraft:movement.basic": {
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": true,
+        "can_pass_doors": true,
+        "can_walk": true,
+        "can_break_doors": true
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_air": true,
+        "breathes_water": true
+      },
+	  "minecraft:physics": {
+      },
+	  "minecraft:pushable": {
+	  },
+	  
+	  //DAMAGE SENSOR
+	  "minecraft:damage_sensor": {
+		"triggers": [
+		  {
+            "on_damage": {
+              "filters": { "test": "has_damage", "value": "fatal" },
+              "event": "myth:death"
+            },
+            "deals_damage": false
+          }
+		]
+	  },
+	  
+	  //ATTACK
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 75,
+		"reselect_targets": true,
+        "must_see": false,
+        "must_see_forget_duration": 20.0,
+        "entity_types": {
+          "filters": { "test": "is_family", "subject": "other", "value": "player" },
+          "max_dist": 75
+        }
+      },
+	  "minecraft:follow_range": {
+        "value": 75,
+        "max": 75
+	  },
+	  "minecraft:behavior.delayed_attack": {
+        "priority": 3,
+		"attack_duration": 0.8,
+		"hit_delay_pct": 0.5,
+        "speed_multiplier": 1.0,
+		"reach_multiplier": 2.8,
+        "track_target": false
+      },
+	  
+	  //BEHAVIORS
+	  "minecraft:behavior.random_stroll": {
+        "priority": 4,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 5,
+        "look_distance": 6,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 6
+      }
+    },
+
+    "events": {
+	  
+	  //SPAWN
+	  "minecraft:entity_spawned": { "trigger": "myth:new_attack" },
+	  
+	  //REMOVE
+	  "myth:remove": { "add": { "component_groups": [ "myth:remove" ] } },
+	  
+	  //ATTACKS
+	  "myth:basic_timer": { "add": { "component_groups": [ "myth:basic_timer" ] }, "remove": { "component_groups": [ "myth:basic_ready", "myth:pathfind" ] } },
+	  "myth:basic_attack": { "add": { "component_groups": [ "myth:basic_attack" ] }, "remove": { "component_groups": [ "myth:basic_timer" ] } },
+	  
+	  "myth:heavy_timer": { "add": { "component_groups": [ "myth:heavy_timer" ] }, "remove": { "component_groups": [ "myth:heavy_ready", "myth:pathfind" ] } },
+	  "myth:heavy_attack": { "add": { "component_groups": [ "myth:heavy_attack" ] }, "remove": { "component_groups": [ "myth:heavy_timer" ] } },
+	  
+	  "myth:new_attack": {
+		"sequence": [
+		  {
+		    "remove": { "component_groups": [ "myth:basic_ready", "myth:basic_attack", "myth:heavy_ready", "myth:heavy_attack" ] },
+			"add": { "component_groups": [ "myth:pathfind" ] }
+		  },
+		  {
+			"randomize": [
+			  { "weight": 25, "add": { "component_groups": [ "myth:basic_ready" ] } },
+			  { "weight": 35, "add": { "component_groups": [ "myth:heavy_ready" ] } }
+			]
+		  }
+		]
+	  },
+	  
+	  //DEATH
+	  "myth:death": { "add": { "component_groups": [ "myth:death" ] }, "remove": { "component_groups": [ "myth:remove_behaviors" ] } }
+		  
+    }
+	
+  }
+}

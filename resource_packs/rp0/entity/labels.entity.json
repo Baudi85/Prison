@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "myth:labels",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "labels_0": "textures/labels/cell_1",
+        "labels_1": "textures/labels/cell_2",
+        "labels_2": "textures/labels/cell_3",
+        "labels_3": "textures/labels/mine_1",
+        "labels_4": "textures/labels/mine_2",
+		"labels_5": "textures/labels/mine_3",
+		"labels_6": "textures/labels/furnace",
+		"labels_7": "textures/labels/shop",
+		"labels_8": "textures/labels/storage"
+      },
+      "geometry": {
+        "default": "geometry.link_board"
+      },
+      "render_controllers": [
+        "controller.render.labels"
+      ],
+      "spawn_egg": {
+        "base_color": "#e3f3f4",
+		"overlay_color": "#95cb69"
+      }
+    }
+  }
+}

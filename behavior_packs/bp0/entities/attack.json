@@ -1,0 +1,155 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "myth:attack",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+	  "animations": {
+		"myth:death": "animation.myth.death.general"
+      },
+      "scripts": {
+        "animate": [
+          { "myth:death": "query.mark_variant" }
+        ]
+      }
+    },
+
+	"component_groups": {
+	  
+	  //DEATH
+	  "myth:death": {
+		"minecraft:mark_variant": { "value": 1 },
+		"minecraft:behavior.nearest_attackable_target": {},
+		"minecraft:type_family": {},
+		"minecraft:movement": {
+          "value": 0.0
+        },
+		"minecraft:collision_box": {
+          "width": 0.0,
+          "height": 0.0
+        },
+		"minecraft:attack": {
+          "damage": 0.0
+        }
+	  },
+	  
+	  //ATTACK
+	  "myth:attack": {
+		"minecraft:skin_id": { "value": 0 },
+		"minecraft:behavior.delayed_attack": {
+          "priority": 3,
+		  "attack_duration": 0.50,
+		  "hit_delay_pct": 0.5,
+          "speed_multiplier": 1.0,
+		  "reach_multiplier": 2.8,
+          "track_target": false
+        }
+	  }
+	  
+	},
+	
+    "components": {
+	
+	  //TRAITS
+      "minecraft:type_family": {
+        "family": [ "monster", "mob" ]
+      },
+	  "minecraft:scale": {
+        "value": 0.46
+      },
+      "minecraft:collision_box": {
+        "width": 0.75,
+        "height": 3.45
+      },
+	  "minecraft:attack": {
+	    "damage": 4.5
+	  },
+	  "minecraft:health": {
+        "value": 16,
+        "max": 16
+      },
+	  "minecraft:movement": {
+        "value": 0.26
+      },
+	  
+	  //BASIC COMPONENTS
+	  "minecraft:mark_variant": {
+	    "value": 0
+	  },
+	  "minecraft:movement.basic": {
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": true,
+        "can_pass_doors": true,
+        "can_walk": true,
+        "can_break_doors": true
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_air": true,
+        "breathes_water": true
+      },
+	  "minecraft:physics": {
+      },
+	  "minecraft:pushable": {
+	  },
+	  
+	  //DAMAGE SENSOR
+	  "minecraft:damage_sensor": {
+		"triggers": [
+		  {
+            "on_damage": {
+              "filters": { "test": "has_damage", "value": "fatal" },
+              "event": "myth:death"
+            },
+            "deals_damage": false
+          }
+		]
+	  },
+	  
+	  //ATTACK
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 120,
+		"reselect_targets": true,
+        "must_see": false,
+        "must_see_forget_duration": 20.0,
+        "entity_types": {
+          "filters": { "test": "is_family", "subject": "other", "value": "player" },
+          "max_dist": 120
+        }
+      },
+	  "minecraft:follow_range": {
+        "value": 120,
+        "max": 120
+	  }
+    },
+
+    "events": {
+	
+	  //SPAWN
+	  "minecraft:entity_spawned": { "add": { "component_groups": [ "myth:attack" ] } },
+	  
+	  //DEATH
+	  "myth:death": { "add": { "component_groups": [ "myth:death" ] }, "remove": { "component_groups": [ "myth:attack" ] } }
+		  
+    }
+	
+  }
+}

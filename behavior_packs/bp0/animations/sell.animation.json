@@ -1,0 +1,123 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+	
+	
+	"animation.sell1.sell":{
+		"animation_length": 3.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/execute @e[name=sell_stone] ~~~ setblock ~ 5 ~ redstone_block 0" ],
+			"1.0":[ "@s myth:clear_sell" ]
+		}
+	},
+	"animation.reset.sell":{
+		"animation_length": 1.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "@s myth:clear_sell" ]
+		}
+	},
+	
+	"animation.sell2.sell":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/execute @e[name=sell_cobblestone] ~~~ setblock ~ 5 ~ redstone_block 0" ],
+			"1.0":[ "@s myth:clear_sell" ]
+
+		}
+	},
+	"animation.sell3.sell":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/execute @e[name=sell_coal] ~~~ setblock ~ 5 ~ redstone_block 0" ],
+			"1.0":[ "@s myth:clear_sell" ]
+
+		}
+	},
+	"animation.sell4.sell":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/execute @e[name=sell_coal_ore] ~~~ setblock ~ 5 ~ redstone_block 0" ],
+			"1.0":[ "@s myth:clear_sell" ]
+
+		}
+	},
+		"animation.sell5.sell":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/execute @e[name=sell_iron] ~~~ setblock ~ 5 ~ redstone_block 0" ],
+			"1.0":[ "@s myth:clear_sell" ]
+
+		}
+	},
+		"animation.sell6.sell":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/execute @e[name=sell_gold] ~~~ setblock ~ 5 ~ redstone_block 0" ],
+			"1.0":[ "@s myth:clear_sell" ]
+
+		}
+	},
+		"animation.sell7.sell":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/execute @e[name=sell_redstone] ~~~ setblock ~ 5 ~ redstone_block 0" ],
+			"1.0":[ "@s myth:clear_sell" ]
+
+		}
+	},
+		"animation.sell8.sell":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/execute @e[name=sell_redstone_ore] ~~~ setblock ~ 5 ~ redstone_block 0" ],
+			"1.0":[ "@s myth:clear_sell" ]
+
+		}
+	},
+		"animation.sell9.sell":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/execute @e[name=sell_diamond] ~~~ setblock ~ 5 ~ redstone_block 0" ],
+			"1.0":[ "@s myth:clear_sell" ]
+
+		}
+	},
+		"animation.sell10.sell":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/execute @e[name=sell_diamond_ore] ~~~ setblock ~ 5 ~ redstone_block 0" ],
+			"1.0":[ "@s myth:clear_sell" ]
+
+		}
+	},
+	"animation.sell11.sell":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/execute @e[name=sell_ancient_debris] ~~~ setblock ~ 5 ~ redstone_block 0" ],
+			"1.0":[ "@s myth:clear_sell" ]
+
+		}
+	},
+	"animation.sell12.sell":{
+		"animation_length": 2.0,
+		"loop": false,
+		"timeline": {
+			"0.5":[ "/execute @e[name=sell_wood] ~~~ setblock ~ 5 ~ redstone_block 0" ],
+			"1.0":[ "@s myth:clear_sell" ]
+
+		}
+	}
+
+  }
+}

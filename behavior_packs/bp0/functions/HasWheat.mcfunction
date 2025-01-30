@@ -1,0 +1,2 @@
+execute @e[type=armor_stand,name=Prison,scores={Event=9,EventPhase=2,HasWheat=9}] ~~~ scoreboard players set @e[type=armor_stand,name=Prison] EventPhase 3
+execute @e[type=armor_stand,name=Prison,scores={Event=9,EventPhase=2}] ~~~ scoreboard players add @e[type=armor_stand,name=Prison] HasWheat 1

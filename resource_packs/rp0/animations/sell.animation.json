@@ -1,0 +1,37 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.myth.sell.closed": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"sell_slot": {
+					"rotation": [-11.75, 0, 0]
+				}
+			}
+		},
+		"animation.myth.sell.output": {
+			"loop": false,
+			"animation_length": 4.24,
+			"bones": {
+				"sell_slot": {
+					"rotation": {
+						"0.0": [-11.75, 0, 0],
+						"0.08": [22.25, 0, 0],
+						"0.24": [19.25, 0, 0],
+						"0.36": [21.25, 0, 0],
+						"0.48": [18.25, 0, 0],
+						"0.72": [21.25, 0, 0],
+						"1.52": [20.25, 0, 0],
+						"2.88": [-1.75, 0, 0],
+						"4.2": [-11.75, 0, 0]
+					}
+				}
+			},
+			"sound_effects": {
+				"0.0": {
+					"effect": "sell"
+				}
+			}
+		}
+	}
+}

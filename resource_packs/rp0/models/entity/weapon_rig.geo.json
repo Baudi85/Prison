@@ -1,0 +1,38 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.weapon_rig",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2,
+				"visible_bounds_offset": [0, 1, 0]
+			},
+			"bones": [
+				{
+					"name": "rightArm",
+					"pivot": [-5, 22, 0]
+				},
+				{
+					"name": "rightItem",
+					"parent": "rightArm",
+					"pivot": [-6, 15, 1]
+				},
+				{
+					"name": "weapon",
+					"parent": "rightItem",
+					"pivot": [-6, 13, 1],
+					"cubes": [
+						{"origin": [-6.5, 11, -17.725], "size": [1, 3, 3], "inflate": -0.1, "pivot": [-6.5, 13, -16.725], "rotation": [45, 0, 0], "uv": [0, 0]},
+						{"origin": [-6.75, 12.25, -3], "size": [1.5, 1.5, 7], "uv": [0, 0]},
+						{"origin": [-7, 11, -5], "size": [2, 4, 2], "uv": [0, 0]},
+						{"origin": [-6.5, 11, -16], "size": [1, 4, 11], "uv": [0, 0]},
+						{"origin": [-7, 12, 3.75], "size": [2, 2, 2], "pivot": [-6, 13, 4.75], "rotation": [45, 0, 0], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

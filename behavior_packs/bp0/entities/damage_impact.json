@@ -1,0 +1,103 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "myth:damage_impact",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+	  "animations": {
+		"myth:death": "animation.myth.death.damage_impact"
+      },
+      "scripts": {
+        "animate": [
+		  "myth:death"
+        ]
+      }
+    },
+	
+	"component_groups": {
+	  
+	  //REMOVE
+	  "myth:remove": { "minecraft:instant_despawn": {} },
+	  
+	  //BARBARIAN BASIC
+	  "myth:prison_guard_base_basic_attack": {
+	    "minecraft:area_attack": {
+		  "damage_range": 1.0,
+		  "damage_per_tick": 1.5,
+		  "cause": "contact",
+		  "entity_filter": { "test": "is_family", "subject": "other", "value": "player" }
+	    }
+	  },
+	  
+	  //BARBARIAN HEAVY
+	  "myth:prison_guard_base_heavy_attack": {
+	    "minecraft:area_attack": {
+		  "damage_range": 1.5,
+		  "damage_per_tick": 2.5,
+		  "cause": "contact",
+		  "entity_filter": { "test": "is_family", "subject": "other", "value": "player" }
+	    }
+	  },
+	  
+	  //GOLEM KNOCK
+	  "myth:dungeon_golem_knock_attack": {
+	    "minecraft:area_attack": {
+		  "damage_range": 1.8,
+		  "damage_per_tick": 5.0,
+		  "cause": "contact",
+		  "entity_filter": { "test": "is_family", "subject": "other", "value": "player" }
+	    }
+	  },
+	  
+	  //GOLEM SLAM
+	  "myth:dungeon_golem_slam_attack": {
+	    "minecraft:area_attack": {
+		  "damage_range": 1.8,
+		  "damage_per_tick": 8.0,
+		  "cause": "contact",
+		  "entity_filter": { "test": "is_family", "subject": "other", "value": "player" }
+	    }
+	  }
+	  
+	},
+	
+    "components": {
+	  "minecraft:type_family": {
+		"family": [ "damage_impact" ]
+	  },
+	  "minecraft:damage_sensor": {
+        "triggers": {
+	      "cause": "all",
+		  "deals_damage": false
+        }
+	  },
+	  "minecraft:collision_box": {
+	    "width": 0,
+		"height": 0
+	  }, 
+	  "minecraft:physics": {
+	  },
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+	
+	"events": {
+	  
+	  //DEFAULT
+	  "minecraft:entity_spawned": { "add": { "component_groups": [ "myth:prison_guard_base_basic_attack" ] } },
+	  
+	  //REMOVE
+	  "myth:remove": { "add": { "component_groups": [ "myth:remove" ] } },
+	  
+	  //ATTACKS
+	  "myth:prison_guard_base_basic_attack": { "add": { "component_groups": [ "myth:prison_guard_base_basic_attack" ] } },
+	  "myth:prison_guard_base_heavy_attack": { "add": { "component_groups": [ "myth:prison_guard_base_heavy_attack" ] } },
+	  "myth:dungeon_golem_knock_attack": { "add": { "component_groups": [ "myth:dungeon_golem_knock_attack" ] } },
+	  "myth:dungeon_golem_slam_attack": { "add": { "component_groups": [ "myth:dungeon_golem_slam_attack" ] } }
+	}
+	
+  }
+}

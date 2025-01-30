@@ -1,0 +1,31 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		
+		//ATTACK
+		"controller.animation.myth.prison_guard_base.attack": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"transitions": [ { "choose_attack": "query.is_delayed_attacking" } ]
+				},
+				"choose_attack": {
+					"transitions": [
+						{ "attack_basic": "query.skin_id == 1" },
+						{ "attack_heavy": "query.skin_id == 4" },
+						{ "idle": "!query.is_delayed_attacking" }
+					]
+				},
+				"attack_basic": {
+					"on_entry": [ "@s myth:basic_timer" ],
+					"transitions": [ { "idle": "query.skin_id != 1" } ]
+				},
+				"attack_heavy": {
+					"on_entry": [ "@s myth:heavy_timer" ],
+					"transitions": [ { "idle": "query.skin_id != 4" } ]
+				}
+			}
+		}
+		
+	}
+}

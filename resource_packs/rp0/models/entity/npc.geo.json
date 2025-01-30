@@ -1,0 +1,133 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.npc",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 5.5,
+				"visible_bounds_offset": [0, 2.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "head",
+					"parent": "root",
+					"pivot": [0, 21, -0.5],
+					"cubes": [
+						{"origin": [-3.5, 22, -4.5], "size": [7, 7, 7], "uv": [0, 0]},
+						{"origin": [-3.6, 29.2, -2.8], "size": [7.2, 2, 0], "pivot": [0, 31.03333, -3.33333], "rotation": [-37.5, 0, 0], "uv": [0, 58]},
+						{"origin": [3.6, 30.2, -2.8], "size": [0, 1, 5], "pivot": [0, 31.03333, -3.33333], "rotation": [-37.5, 0, 0], "uv": [0, 56]},
+						{"origin": [-3.6, 30.2, -2.8], "size": [0, 1, 5], "pivot": [0, 31.03333, -3.33333], "rotation": [-37.5, 0, 0], "uv": [0, 56]},
+						{"origin": [1.1, 27.9, 1], "size": [2, 5, 0], "pivot": [1.5, 31, -2.5], "rotation": [0, 0, 17.5], "uv": [16, 24]}
+					]
+				},
+				{
+					"name": "body",
+					"parent": "root",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-4, 10, -3], "size": [8, 2, 4], "uv": [20, 20]},
+						{"origin": [-1.5, 12, -2], "size": [3, 3, 3], "uv": [46, 0]},
+						{"origin": [-4, 15, -3], "size": [8, 6, 4], "uv": [0, 14]}
+					]
+				},
+				{
+					"name": "cloth_body",
+					"parent": "body",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [4.1, 10, -3.2], "size": [0, 11, 4.3], "uv": [20, 36]},
+						{"origin": [-4.1, 10, -3.2], "size": [0, 11, 4.3], "uv": [12, 36]},
+						{"origin": [1.1, 10, -3.2], "size": [3, 11.1, 0], "uv": [48, 25]},
+						{"origin": [-4.1, 10, -3.2], "size": [3, 11.1, 0], "uv": [49, 6]},
+						{"origin": [-3.9, 21.1, -3.2], "size": [2, 0, 4.3], "uv": [17, 0]},
+						{"origin": [2.1, 21.1, -3.2], "size": [2, 0, 4.3], "uv": [21, 0]},
+						{"origin": [-4.1, 10, 1.1], "size": [8.2, 11.1, 0], "uv": [32, 26]}
+					]
+				},
+				{
+					"name": "left_hand",
+					"parent": "root",
+					"pivot": [4.1, 20, -1],
+					"cubes": [
+						{"origin": [4, 18, -3.6], "size": [4, 4, 5.1], "uv": [28, 0]},
+						{"origin": [4.3, 11, -2.5], "size": [3, 10, 3], "uv": [0, 38]}
+					]
+				},
+				{
+					"name": "cloth_left_hand",
+					"parent": "left_hand",
+					"pivot": [0.1, 0, 0],
+					"cubes": [
+						{"origin": [4.2, 13, -3.2], "size": [3.2, 8, 0], "uv": [20, 51]},
+						{"origin": [4.2, 13, -3.2], "size": [0, 8, 4.3], "uv": [41, 41]},
+						{"origin": [7.4, 13, -3.2], "size": [0, 8, 4.3], "uv": [44, 13]},
+						{"origin": [4.2, 13, 1.1], "size": [3.2, 8, 0], "uv": [14, 51]}
+					]
+				},
+				{
+					"name": "right_hand",
+					"parent": "root",
+					"pivot": [-4, 20, -1],
+					"cubes": [
+						{"origin": [-7.3, 11, -2.5], "size": [3, 10, 3], "uv": [29, 37]},
+						{"origin": [-8, 18, -3.6], "size": [4, 4, 5.1], "uv": [23, 9]}
+					]
+				},
+				{
+					"name": "cloth_right_hand",
+					"parent": "right_hand",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-7.4, 13, -3.2], "size": [0, 8, 4.3], "uv": [41, 5]},
+						{"origin": [-7.4, 13, 1.1], "size": [3.2, 8, 0], "uv": [49, 50]},
+						{"origin": [-4.2, 13, -3.2], "size": [0, 8, 4.3], "uv": [41, 33]},
+						{"origin": [-7.4, 13, -3.2], "size": [3.2, 8, 0], "uv": [8, 51]}
+					]
+				},
+				{
+					"name": "right_leg",
+					"parent": "root",
+					"pivot": [-2, 10, -1],
+					"cubes": [
+						{"origin": [-4, 0, -3], "size": [4, 10, 4], "uv": [16, 26]}
+					]
+				},
+				{
+					"name": "cloth_right_leg",
+					"parent": "right_leg",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-4.1, 3, 1.1], "size": [4.1, 7.1, 0], "uv": [49, 36]},
+						{"origin": [-4.1, 3, -3.2], "size": [0, 7, 4.3], "uv": [0, 47]},
+						{"origin": [-4.1, 3, -3.2], "size": [3, 7.1, 0], "uv": [52, 17]}
+					]
+				},
+				{
+					"name": "left_leg",
+					"parent": "root",
+					"pivot": [2, 10, -1],
+					"cubes": [
+						{"origin": [0, 0, -3], "size": [4, 10, 4], "uv": [0, 24]}
+					]
+				},
+				{
+					"name": "cloth_left_leg",
+					"parent": "left_leg",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [1.1, 3, -3.2], "size": [3, 7.1, 0], "uv": [0, 0]},
+						{"origin": [4.1, 3, -3.2], "size": [0, 7, 4.3], "uv": [28, 46]},
+						{"origin": [0, 3, 1.1], "size": [4.1, 7.1, 0], "uv": [49, 43]}
+					]
+				}
+			]
+		}
+	]
+}

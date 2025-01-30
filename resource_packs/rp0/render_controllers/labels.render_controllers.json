@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    
+	"controller.render.labels": {
+      "arrays": {
+        "textures": {
+          "Array.texture": [
+            "Texture.labels_0",
+			"Texture.labels_1",
+			"Texture.labels_2",
+			"Texture.labels_3",
+			"Texture.labels_4",
+			"Texture.labels_5",
+			"Texture.labels_6",
+			"Texture.labels_7",
+			"Texture.labels_8"
+          ]
+		}
+      },
+	  "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Array.texture[query.skin_id]" ]
+    }
+	
+  }
+}

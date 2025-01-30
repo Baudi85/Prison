@@ -1,0 +1,47 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "myth:bus",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": { "default": "textures/object/bus" },
+      "geometry": { "default": "geometry.bus" },
+      "render_controllers": [ "controller.render.myth" ],
+      "spawn_egg": {
+        "base_color": "#BDB76B",
+		"overlay_color": "#F0E68C"
+      },
+	  "scripts": {
+	    "initialize": [
+		  "variable.yaw_distance = 0;",
+		  "variable.yaw_diff = 1;",
+		  "variable.yaw_sub = 0;",
+		  "variable.yaw_prev = query.yaw_speed;",
+		  "variable.yaw_time = 0;",
+		  "variable.yaw_prevs = query.yaw_speed;",
+		  "variable.yaw_anim = 0;"
+		],
+	    "pre_animation": [
+		  "variable.wheel = query.modified_distance_moved * 153;",
+		  "variable.yaw_distance = variable.yaw_distance + math.abs(query.yaw_speed);",
+		  "variable.yaw_diff = query.life_time > variable.yaw_time;",
+		  "variable.yaw_sub = variable.yaw_diff ? query.yaw_speed - variable.yaw_prevs : variable.yaw_sub;",
+		  "variable.yaw_prev = variable.yaw_diff ? variable.yaw_prevs : variable.yaw_prev;",
+		  "variable.yaw_time = variable.yaw_diff ? query.life_time + 0.15 : variable.yaw_time;",
+		  "variable.yaw_prevs = variable.yaw_diff ? query.yaw_speed : variable.yaw_prevs;",
+		  "variable.yaw_anim = math.clamp(1 - (variable.yaw_time - query.life_time) / 0.15, 0, 1) * variable.yaw_sub + variable.yaw_prev;"
+        ],
+		"animate": [
+		  "move",
+		  "turn"
+		]
+	  },
+	  "animations": {
+	    "move": "animation.myth.car.move",
+	    "turn": "animation.myth.car.turn"
+	  }
+    }
+  }
+}

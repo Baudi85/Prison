@@ -1,0 +1,22 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		
+		//ROOT
+		"controller.animation.myth.buy1.root" : {
+			"initial_state": "closed",
+			"states" : {
+				"closed" : {
+					"animations" : [ "idle" ],
+					"transitions": [ { "open": "query.is_sheared" } ]
+				},
+				"open" : {
+					"animations" : [ "open" ],
+					"transitions": [ { "closed": "!query.is_sheared" } ]
+				}
+				
+			}
+		}
+		
+	}
+}

@@ -1,0 +1,32 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "myth:link_board",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+	
+    "components": {
+	  "minecraft:collision_box": {
+		"width": 0,
+		"height": 0
+	  },
+	  "minecraft:damage_sensor": {
+        "triggers": {
+	      "cause": "all",
+		  "deals_damage": false
+        }
+	  },
+      "minecraft:push_through": {
+        "value": 1
+      },
+	  "minecraft:physics": {
+	    "has_collision": true,
+		"has_gravity": false
+	  }
+    }
+	
+  }
+}

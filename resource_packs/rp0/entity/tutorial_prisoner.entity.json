@@ -1,0 +1,18 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+	
+      "identifier": "myth:tutorial_prisoner",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/npc/npc_4" },
+      "geometry": { "default": "geometry.npc" },
+      "render_controllers": [ "controller.render.myth" ],
+      "spawn_egg": {
+        "base_color": "#e3f3f4",
+		    "overlay_color": "#95cb69"
+      }
+	  
+    }
+  }
+}

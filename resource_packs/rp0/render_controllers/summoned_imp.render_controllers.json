@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.summoned_imp": {
+      "arrays": {
+        "textures": {
+          "Array.texture": [
+            "Texture.default",
+			"Texture.moon",
+			"Texture.sun",
+			"Texture.inactive",
+			"Texture.fire",
+			"Texture.frost",
+			"Texture.void"
+          ]
+		}
+      },
+	  "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Array.texture[query.variant]" ]
+    }
+  }
+}

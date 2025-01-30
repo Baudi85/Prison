@@ -1,0 +1,78 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "myth:prestige4",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          { "command": "query.is_sheared" }
+        ]
+      },
+      "animations": {
+        "command": "animation.prestige4"
+      }
+    },
+    "component_groups": {
+      "myth:run_command": {
+        "minecraft:is_sheared": {}
+      }
+    },
+    "components": {
+      "minecraft:custom_hit_test": {
+        "hitboxes": [
+          {
+            "width": 1.62,
+            "height": 1,
+            "pivot": [ 0, 0.5, 0 ]
+          }
+        ]
+      },
+      "minecraft:interact": {
+        "interactions": {
+          "on_interact": {
+		    "filters": { "test": "is_family", "subject": "other", "value": "player" },
+            "event": "myth:run_command",
+			"target": "self"
+          },
+          "play_sounds": "plop",
+          "swing":true,
+		  "cooldown": 0.4
+        }
+      },
+	    "minecraft:damage_sensor": {
+        "triggers": {
+          "on_damage": {
+            "filters": { "test": "is_family", "subject": "other", "value": "player" },
+            "event": "myth:run_command",
+            "target": "self"
+          },
+          "deals_damage": false
+        }
+      },
+
+      "minecraft:physics": {
+        "has_collision": false,
+        "has_gravity": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "events": {
+      "myth:run_command": {
+        "add": {
+          "component_groups": [ "myth:run_command" ]
+        }
+      },
+      "myth:remove_run_command": {
+        "remove": {
+          "component_groups": [ "myth:run_command" ]
+        }
+      }
+    }
+  }
+}

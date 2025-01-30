@@ -1,0 +1,1 @@
+tag @e[name=Prison] remove EventOn

@@ -1,0 +1,66 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.plant2",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "flower",
+					"parent": "root",
+					"pivot": [0, 20.5, 0],
+					"cubes": [
+						{"origin": [0, 11, -5], "size": [0, 19, 10], "pivot": [0, 20.5, 0], "rotation": [0, -45, 0], "uv": [0, 49]},
+						{"origin": [0, 11, -5], "size": [0, 19, 10], "uv": [0, 49]},
+						{"origin": [0, 11, -5], "size": [0, 19, 10], "pivot": [0, 20.5, 0], "rotation": [0, 45, 0], "uv": [0, 49]},
+						{"origin": [0, 11, -5], "size": [0, 19, 10], "pivot": [0, 20.5, 0], "rotation": [0, -90, 0], "uv": [0, 49]}
+					]
+				},
+				{
+					"name": "base",
+					"parent": "root",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-7, 0, -7], "size": [14, 11, 14], "uv": [0, 0]},
+						{"origin": [-7, 11, -7], "size": [14, 1, 2], "uv": [58, 0]},
+						{"origin": [-7, 11, -5], "size": [2, 1, 12], "uv": [42, 0]},
+						{"origin": [-5, 11, 5], "size": [12, 1, 2], "uv": [58, 3]},
+						{"origin": [5, 11, -5], "size": [2, 1, 10], "uv": [56, 13]}
+					]
+				},
+				{
+					"name": "fruits",
+					"parent": "root",
+					"pivot": [-0.2, 17.45385, -3.15788],
+					"cubes": [
+						{"origin": [-3.76398, 19.17679, 1.52313], "size": [2, 2, 2], "pivot": [-2.76398, 23.17679, 2.52313], "rotation": [-30, -50, 0], "uv": [0, 0]},
+						{"origin": [0.7, 10, 2.7], "size": [2, 2, 2], "pivot": [2.7, 21, 2.7], "rotation": [-30, 0, 0], "uv": [0, 0]},
+						{"origin": [-1.2, 25.45385, -7.15788], "size": [2, 2, 2], "pivot": [-0.2, 17.45385, -3.15788], "rotation": [-30, 50, 0], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "glass",
+					"parent": "root",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-6.7, 12, -6.6], "size": [0, 21, 13.3], "pivot": [-6.7, 22.5, 0.05], "rotation": [180, 0, 0], "uv": [0, 25]},
+						{"origin": [-6.7, 33, -6.6], "size": [13.4, 0, 13.3], "uv": [49, 25]},
+						{"origin": [-6.7, 12, 6.7], "size": [13.4, 21, 0], "uv": [0, 25]},
+						{"origin": [6.7, 12, -6.6], "size": [0, 21, 13.3], "pivot": [6.7, 22.5, 0.05], "rotation": [180, 0, 0], "uv": [0, 25]},
+						{"origin": [-6.7, 12, -6.6], "size": [13.4, 21, 0], "uv": [0, 25]}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+	
+      "identifier": "myth:generator_t1",
+      "spawn_egg": { "base_color": "#e3f3f4", "overlay_color": "#95cb69" },
+	  "materials": { "default": "entity_alphatest" },
+      "geometry": { "default": "geometry.generator_t1" },
+	  "textures": { "default": "textures/object/generator" },
+      "render_controllers": [ "controller.render.myth" ],
+      
+	  
+	  "scripts": {
+		"animate": [
+		  "idle"
+		]
+	  },
+      "animations": {
+		"idle": "animation.myth.generator.idle"
+      },
+	  "particle_effects": {
+	    "generator": "myth:generator"
+	  },
+	  "sound_effects": {
+		"idle": "prison.myth.generator.idle"
+	  }	  	     
+    }
+  }
+}

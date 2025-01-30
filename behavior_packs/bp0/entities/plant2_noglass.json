@@ -1,0 +1,56 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "myth:plant2_noglass",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+	
+	"component_groups": {
+	  
+	  //REMOVE
+	  "myth:remove": { "minecraft:instant_despawn": {} },
+	  
+	  //ACTIVATE
+	  "myth:activate": { "minecraft:is_saddled": {} }
+	  
+	},
+	
+    "components": {
+	  "minecraft:collision_box": {
+		"width": 0,
+		"height": 0
+	  },
+	  "minecraft:damage_sensor": {
+        "triggers": [
+		  {
+            "on_damage": {
+              "filters": { "test": "is_family", "subject": "other", "value": "player" },
+              "event": "myth:activate"
+            },
+            "deals_damage": false
+          },
+		  {
+	        "cause": "all",
+		    "deals_damage": false
+          }
+		]
+	  }, 
+	  "minecraft:physics": {
+	  }
+    },
+	
+	"events": {
+	  
+	  //REMOVE
+	  "myth:remove": { "add": { "component_groups": [ "myth:remove" ] } },
+	  
+	  //ACTIVATE
+	  "myth:activate": { "add": { "component_groups": [ "myth:activate" ] } }
+		  
+    }
+	
+  }
+}

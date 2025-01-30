@@ -1,0 +1,1 @@
+execute @e[type=armor_stand,name=Prison,scores={Tutorial=0}] ~ ~ ~ scoreboard players set @e[type=armor_stand,name=Prison] Tutorial 1

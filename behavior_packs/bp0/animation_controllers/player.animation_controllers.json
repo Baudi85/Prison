@@ -1,0 +1,21 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		
+		//DEATH
+		"controller.animation.myth.player.death": {
+			"initial_state": "alive",
+			"states": {
+				"alive": {
+					"transitions": [ { "dead": "!query.is_alive" } ]
+				},
+				"dead": {
+					"on_entry": [ "/execute @s[scores={Coins=10..}] ~~~ scoreboard players remove @a Coins 10" ],
+					"transitions": [ { "alive": "query.is_alive" } ]
+				}
+				
+			}
+		}
+		
+	}
+}

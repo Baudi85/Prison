@@ -1,0 +1,170 @@
+{
+   "format_version":"1.10.0",
+   "animations":{
+      "animation.upgrade_mine_1":{
+         "timeline":{
+            "0.0":[ 
+            	"/function upgrade_mine_1",
+            	"@s myth:remove_run_command"
+            ]
+         },
+         "animation_length": 0.05,
+         "loop":true
+
+      },
+	        "animation.upgrade_mine_2":{
+         "timeline":{
+            "0.0":[ 
+            	"/function upgrade_mine_2",
+            	"@s myth:remove_run_command"
+            ]
+         },
+         "animation_length": 0.05,
+         "loop":true
+
+      },
+	  	        "animation.StartTutorial":{
+         "timeline":{
+            "0.0":[ 
+            	"/function StartTutorial",
+            	"@s myth:remove_run_command"
+            ]
+         },
+         "animation_length": 0.05,
+         "loop":true
+
+      },
+	  	        "animation.upgrade_mine_4":{
+         "timeline":{
+            "0.0":[ 
+            	"/function upgrade_mine_4",
+            	"@s myth:remove_run_command"
+            ]
+         },
+         "animation_length": 0.05,
+         "loop":true
+
+      },
+
+	  	  	        "animation.prestige1":{
+         "timeline":{
+            "0.0":[ 
+            	"/function prestige1",
+            	"@s myth:remove_run_command"
+            ]
+         },
+         "animation_length": 0.05,
+         "loop":true
+
+      },
+	  	  	  	        "animation.prestige2":{
+         "timeline":{
+            "0.0":[ 
+            	"/function prestige2",
+            	"@s myth:remove_run_command"
+            ]
+         },
+         "animation_length": 0.05,
+         "loop":true
+
+      },
+	  	  	  	        "animation.prestige3":{
+         "timeline":{
+            "0.0":[ 
+            	"/function prestige3",
+            	"@s myth:remove_run_command"
+            ]
+         },
+         "animation_length": 0.05,
+         "loop":true
+
+      },
+	  	  	  	        "animation.prestige4":{
+         "timeline":{
+            "0.0":[ 
+            	"/function prestige4",
+            	"@s myth:remove_run_command"
+            ]
+         },
+         "animation_length": 0.05,
+         "loop":true
+
+      },
+	  	  	  	        "animation.prestige5":{
+         "timeline":{
+            "0.0":[ 
+            	"/function prestige5",
+            	"@s myth:remove_run_command"
+            ]
+         },
+         "animation_length": 0.05,
+         "loop":true
+
+      },
+	  	  	  	  	        "animation.prestige6":{
+         "timeline":{
+            "0.0":[ 
+            	"/function prestige6",
+            	"@s myth:remove_run_command"
+            ]
+         },
+         "animation_length": 0.05,
+         "loop":true
+
+      },
+	  	        "animation.upgrade_mine_5":{
+         "timeline":{
+            "0.0":[ 
+            	"/function upgrade_mine_5",
+            	"@s myth:remove_run_command"
+            ]
+         },
+         "animation_length": 0.05,
+         "loop":true
+
+      },
+	  	        "animation.upgrade_mine_6":{
+         "timeline":{
+            "0.0":[ 
+            	"/function upgrade_mine_6",
+            	"@s myth:remove_run_command"
+            ]
+         },
+         "animation_length": 0.05,
+         "loop":true
+
+      },
+	  	  	        "animation.unlock_mine_2":{
+         "timeline":{
+            "0.0":[ 
+            	"/function unlock_mine_2",
+            	"@s myth:remove_run_command"
+            ]
+         },
+         "animation_length": 0.05,
+         "loop":true
+
+      },
+	  	  	  	        "animation.unlock_mine_3":{
+         "timeline":{
+            "0.0":[ 
+            	"/function unlock_mine_3",
+            	"@s myth:remove_run_command"
+            ]
+         },
+         "animation_length": 0.05,
+         "loop":true
+
+      },
+	  	  	  	  "animation.upgrade_mine_3":{
+         "timeline":{
+            "0.0":[ 
+            	"/function upgrade_mine_3",
+            	"@s myth:remove_run_command"
+            ]
+         },
+         "animation_length": 0.05,
+         "loop":true
+      }
+   }
+}

@@ -1,0 +1,144 @@
+{
+	"format_version" : "1.10.0",
+	"animations" : {
+	
+		//CAR
+		"animation.myth.car.move" : {
+			"loop" : true,
+			"bones" : {
+				"left_back_wheel" : {
+					"rotation" : [ "variable.wheel", 0, 0 ]
+				},
+				"left_front_wheel" : {
+					"rotation" : [ "variable.wheel", 0, 0 ]
+				},
+				"right_back_wheel" : {
+					"rotation" : [ "variable.wheel", 0, 0 ]
+				},
+				"right_front_wheel" : {
+					"rotation" : [ "variable.wheel", 0, 0 ]
+				}
+			}
+		},
+		
+		"animation.myth.car.turn" : {
+			"loop" : true,
+			"bones" : {
+				"right_front_wheel" : {
+					"rotation" : [ "variable.yaw_distance / 10", "variable.yaw_anim / 5", 0 ]
+				},
+				"left_front_wheel" : {
+					"rotation" : [ "variable.yaw_distance / 10", "variable.yaw_anim / 5", 0 ]
+				}
+			}
+		},
+		
+		//HELICOPTER
+		"animation.myth.helicopter.idle" : {
+			"loop" : true,
+			"animation_length": 15,
+			"sound_effects": {
+				"0.0": {
+					"effect": "idle"
+				}
+			}
+		},
+		
+		"animation.myth.helicopter.start_rotor" : {
+			"loop" : "hold_on_last_frame",
+			"animation_length": 2,
+			"bones" : {
+				"main_rotor" : {
+					"rotation" : [ 0, "400 * math.pow(query.anim_time * 1.5, 2)", 0 ]
+				},
+				"tail_rotor" : {
+					"rotation" : [ "400 * math.pow(query.anim_time * 1.5, 2)", 0, 0 ]
+				}
+			},
+			"sound_effects": {
+				"0.0": {
+					"effect": "start"
+				}
+			}
+		},
+		
+		"animation.myth.helicopter.stop_rotor" : {
+			"loop" : "hold_on_last_frame",
+			"animation_length": 2,
+			"bones" : {
+				"main_rotor" : {
+					"rotation" : [ 0, "-400 * math.pow(3 - query.anim_time * 1.5, 2)", 0 ]
+				},
+				"tail_rotor" : {
+					"rotation" : [ "-400 * math.pow(3 - query.anim_time * 1.5, 2)", 0, 0 ]
+				}
+			},
+			"sound_effects": {
+				"0.0": {
+					"effect": "stop"
+				}
+			}
+		},
+		
+		"animation.myth.helicopter.rotor" : {
+			"loop" : true,
+			"animation_length": 0.1,
+			"bones" : {
+				"main_rotor" : {
+					"rotation" : [ 0, "query.anim_time * 3600", 0 ]
+				},
+				"tail_rotor" : {
+					"rotation" : [ "query.anim_time * 3600", 0, 0 ]
+				}
+			}
+		},
+		
+		"animation.myth.helicopter.tilt" : {
+			"loop" : true,
+			"bones" : {
+				"root" : {
+					"rotation" : [ "query.modified_move_speed * 6", 0, 0 ]
+				}
+			}
+		},
+		
+		"animation.myth.helicopter.turn" : {
+			"loop" : true,
+			"bones" : {
+				"root" : {
+					"rotation" : [ 0, 0, "-variable.yaw_anim / 10" ]
+				}
+			}
+		},
+		
+		//BOAT
+		"animation.myth.boat.tilt" : {
+			"loop" : true,
+			"bones" : {
+				"root" : {
+					"rotation" : [ "query.modified_move_speed * 6", 0, 0 ]
+				}
+			}
+		},
+		
+		"animation.myth.boat.turn" : {
+			"loop" : true,
+			"bones" : {
+				"root" : {
+					"rotation" : [ 0, 0, "-variable.yaw_anim / 15" ]
+				}
+			}
+		},
+		
+		"animation.myth.boat.mast" : {
+			"loop" : "hold_on_last_frame",
+			"animation_length": 4.0,
+			"bones" : {
+				"sail" : {
+					"rotation" : [ 0, "variable.mast_rotation * math.sin(query.anim_time * 90)", 0 ]
+				}
+			}
+		}
+		
+	}
+}

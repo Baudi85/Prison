@@ -1,0 +1,94 @@
+{ 
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "myth:sell1",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+
+      "scripts": {
+        "animate": [
+          "sell_controller"
+        ]
+      },
+      "animations": {
+        "sell1_animation":"animation.sell1.sell",
+        "sell_reset_animation":"animation.reset.sell",
+        "sell_controller":"controller.animation.sell1"
+      }
+    },
+
+    "component_groups": {
+        //Removes default death animation and sounds (use with myth:remove event)
+      "myth:remove": { "minecraft:instant_despawn": {} },
+      "myth:sell1": { "minecraft:is_sheared": {} }
+    },
+  
+    
+    "components": {
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "on_interact": {
+              "filters": { "test": "is_family", "subject": "other", "value": "player" },
+              "event": "myth:sell_item1",
+              "target": "self"
+            },
+            "swing": true,
+            "cooldown": 0.4
+          }
+        ]
+      },
+     
+	  "minecraft:collision_box": {
+		"width": 0,
+		"height": 0
+	  },
+	  "minecraft:custom_hit_test": {
+	    "hitboxes": [
+		  {
+		    "width": 1.05,
+			"height": 1.9,
+			"pivot": [0, 0.95, 0]
+		  }
+		]
+	  },
+          
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": { "all_of": [ { "test": "is_family", "subject": "other", "value": "player" }, { "test": "has_component", "operator": "not", "value": "minecraft:is_sheared" } ] },
+              "event": "myth:sell_item1",
+              "target": "self"
+            },
+            "deals_damage": false
+          },
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+        
+      "minecraft:push_through": { "value": 1 },
+        
+      "minecraft:physics": {}
+
+    },
+    
+  
+  
+  
+    "events":{
+  
+      "myth:remove": { "add": { "component_groups": [ "myth:remove" ] } },
+      "myth:sell_item1": {"add":  { "component_groups": [ "myth:sell1" ]}},
+      "myth:clear_sell": {"remove": { "component_groups": [ "myth:sell1" ]}}
+
+      
+      
+    }
+  }
+}

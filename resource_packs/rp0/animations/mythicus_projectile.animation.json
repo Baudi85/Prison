@@ -1,0 +1,16 @@
+{
+	"format_version" : "1.10.0",
+	"animations" : {
+		
+		//ROTATION
+		"animation.myth.projectile.rotate" : {
+			"loop" : true,
+			"bones" : {
+				"root" : {
+					"rotation" : [ 0, "variable.projectile_rot", 0 ]
+				}
+			}
+		}
+		
+	}
+}

@@ -1,0 +1,1 @@
+scoreboard players set @a Coins 100000

@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+  
+	"animation.myth.vehicle.water_timer": {
+	  "animation_length": 20.0,
+	  "loop": true,
+      "timeline": {
+	    "5.0": "/title @a[r=10] actionbar §cWarning!§r Your engine is flooding!",
+		"15.0": [ "@s myth:remove", "/title @a[r=10] actionbar Your engine flooded!" ]
+      }
+    },
+	
+	"animation.myth.helicopter.rotor": {
+	  "animation_length": 10.0,
+	  "loop": true,
+      "timeline": {
+		"2.0": "/playsound @a[r=10] furniture.myth.helicopter.drive"
+      }
+    }
+	
+  }
+}

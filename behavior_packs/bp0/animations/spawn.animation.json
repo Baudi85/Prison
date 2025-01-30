@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+	
+	"animation.spawn.day_spawn":{
+		"animation_length": 12.0,
+		"loop": true,
+		"timeline": {
+			"1.0":[ "/function spawn" ],
+			"2.0":[ "/function spawn2" ]
+		}
+	},
+	
+	"animation.spawn.night_spawn":{
+		"animation_length": 8.0 ,
+		"loop": true,
+		"timeline": {
+			"1.5":[ "/function spawn" ],
+			"2.5":[ "/function spawn2" ]
+		}
+	}
+  }
+}

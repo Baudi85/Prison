@@ -1,0 +1,80 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		
+		//HELICOPTER
+		"controller.animation.myth.helicopter.rotor" : {
+			"initial_state" : "idle",
+			"states" : {
+				"idle" : {
+					"transitions" : [ { "start" : "query.has_rider || !query.is_on_ground" } ]
+				},
+				"start": {
+					"animations": [ "start_rotor" ],
+					"transitions": [ { "fly": "query.all_animations_finished" } ]
+				},
+				"fly": {
+					"animations": [ "rotor" ],
+					"transitions": [ { "stop": "!query.has_rider && query.is_on_ground" } ]
+				},
+				"stop": {
+					"animations": [ "stop_rotor" ],
+					"transitions": [ { "idle": "query.all_animations_finished" } ]
+				}
+			}
+		},
+		
+		//BOAT
+		"controller.animation.myth.boat.mast" : {
+			"initial_state" : "idle",
+			"states" : {
+				"idle" : {
+					"on_entry": [ "variable.mast_rotation = Math.random(3,8);" ],
+					"transitions" : [ { "mast" : "1" } ],
+					"blend_transition": 0.1,
+					"blend_via_shortest_path": true
+				},
+				"mast": {
+					"animations": [ "mast" ],
+					"transitions": [ { "idle": "query.all_animations_finished" } ],
+					"blend_transition": 0.1,
+					"blend_via_shortest_path": true
+				}
+			}
+		},
+		
+		//MONEY TANK
+		"controller.animation.myth.money_tank.root" : {
+			"initial_state" : "idle",
+			"states" : {
+				"idle" : {
+					"transitions" : [
+						{ "idle_mounted" : "query.has_rider" },
+						{ "move" : "query.ground_speed > 0.3" }
+					],
+					"blend_transition": 0.1,
+					"blend_via_shortest_path": true
+				},
+				"idle_mounted": {
+					"animations": [ "idle_mounted" ],
+					"transitions": [
+						{ "idle": "!query.has_rider" },
+						{ "move": "query.ground_speed > 0.3" }
+					],
+					"blend_transition": 0.1,
+					"blend_via_shortest_path": true
+				},
+				"move": {
+					"animations": [ "forward" ],
+					"transitions": [
+						{ "idle": "!query.has_rider && query.ground_speed < 0.3" },
+						{ "idle_mounted": "query.ground_speed < 0.3" }
+					],
+					"blend_transition": 0.1,
+					"blend_via_shortest_path": true
+				}
+			}
+		}
+		
+	}
+}

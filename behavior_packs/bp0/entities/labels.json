@@ -1,0 +1,94 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "myth:labels",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+	
+	"component_groups": {
+	  
+	  //CLICK
+	  "myth:click": { "minecraft:is_sheared": {} },
+	  
+	  //MENU
+	  "myth:label_0": { "minecraft:skin_id": { "value": 1 } },
+      "myth:label_1": { "minecraft:skin_id": { "value": 2 } },
+      "myth:label_2": { "minecraft:skin_id": { "value": 3 } },
+      "myth:label_3": { "minecraft:skin_id": { "value": 4 } },
+      "myth:label_4": { "minecraft:skin_id": { "value": 5 } },
+      "myth:label_5": { "minecraft:skin_id": { "value": 6 } },
+      "myth:label_6": { "minecraft:skin_id": { "value": 7 } },
+      "myth:label_7": { "minecraft:skin_id": { "value": 8 } },
+      "myth:label_8": { "minecraft:skin_id": { "value": 9 } }
+	  
+	},
+	
+    "components": {
+	  "minecraft:collision_box": {
+		"width": 0,
+		"height": 0
+	  },
+	  "minecraft:variant": {
+	    "value": 0
+	  },
+	  "minecraft:mark_variant": {
+	    "value": 0
+	  },
+      "minecraft:health": {
+        "value": 100,
+        "max": 100
+      },
+	  "minecraft:scale": {
+	    "value": 1.5
+	  },
+	  "minecraft:knockback_resistance": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:push_through": {
+        "value": 1
+      },
+	  "minecraft:physics": {
+	    "has_collision": false,
+		"has_gravity": false
+	  },
+	  "minecraft:damage_sensor": {
+        "triggers": [
+		  {
+		    "on_damage": {
+              "filters": { "test": "is_family", "subject": "other", "value": "player" },
+              "event": "myth:click"
+			},
+			"deals_damage": false
+          },
+		  {
+	        "cause": "all",
+		    "deals_damage": false
+          }
+		]
+	  }
+    },
+	
+	"events": {
+
+	  //CLICK
+	  "myth:click": { "add": { "component_groups": [ "myth:click" ] } },
+	  
+	  //MENU
+      "myth:label_0": { "add": { "component_groups": [ "myth:label_0" ] } },
+      "myth:label_1": { "add": { "component_groups": [ "myth:label_1" ] } },
+      "myth:label_2": { "add": { "component_groups": [ "myth:label_2" ] } },
+      "myth:label_3": { "add": { "component_groups": [ "myth:label_3" ] } },
+      "myth:label_4": { "add": { "component_groups": [ "myth:label_4" ] } },
+      "myth:label_5": { "add": { "component_groups": [ "myth:label_5" ] } },
+      "myth:label_6": { "add": { "component_groups": [ "myth:label_6" ] } },
+	  "myth:label_7": { "add": { "component_groups": [ "myth:label_7" ] } },
+	  "myth:label_8": { "add": { "component_groups": [ "myth:label_8" ] } }
+	  
+	}
+	
+  }
+}

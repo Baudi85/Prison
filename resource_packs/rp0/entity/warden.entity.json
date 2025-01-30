@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+	
+      "identifier": "myth:warden",
+      "spawn_egg": { "base_color": "#e3f3f4", "overlay_color": "#95cb69" },
+	  "materials": { "default": "entity_alphatest" },
+      "geometry": { "default": "geometry.warden" },
+	  "textures": { "default": "textures/entity/warden" },
+      "render_controllers": [ "controller.render.myth" ],
+      
+	  
+	  "scripts": {
+		"animate": [
+		  "idle"
+		]
+	  },
+      "animations": {
+		"idle": "animation.myth.warden.idle"
+      }   
+    }
+  }
+}

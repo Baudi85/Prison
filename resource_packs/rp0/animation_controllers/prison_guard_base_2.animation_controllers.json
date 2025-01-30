@@ -1,0 +1,38 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		
+		"controller.animation.myth.prison_guard_base_2.root" : {
+			"initial_state": "move",
+			"states" : {
+				"move" : {
+					"animations" : [ "controller_move" ],
+					"transitions": [
+						{ "death": "query.mark_variant" },
+						{ "attack": "query.is_delayed_attacking" }
+					],
+					"blend_transition": 0.2,
+					"blend_via_shortest_path": true,
+					"on_exit": [ "variable.attack_random = Math.floor(Math.random(0, 1.99));" ]
+				},
+				"attack" : {
+					"animations" : [
+						{ "attack_1": "variable.attack_random == 0" },
+						{ "attack_2": "variable.attack_random == 1" }
+					],
+					"transitions": [
+						{ "death": "query.mark_variant" },
+						{ "move": "query.any_animation_finished" }
+					],
+					"blend_transition": 0.2,
+					"blend_via_shortest_path": true
+				},
+				"death" : {
+					"animations" : [ "death" ]
+				}
+				
+			}
+		}
+		
+	}
+}

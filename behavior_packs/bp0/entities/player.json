@@ -1,0 +1,485 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:player",
+      "is_spawnable": false,
+      "is_summonable": false,
+      "is_experimental": false,
+	  "animations": {
+      "day_spawn_anim":"animation.spawn.day_spawn",
+      "night_spawn_anim":"animation.spawn.night_spawn",
+	  "controller_death": "controller.animation.myth.player.death"
+      },
+      "scripts": {
+        "animate": [
+          {"day_spawn_anim": "query.skin_id == 0"},
+          {"night_spawn_anim": "query.skin_id == 1"},
+		  "controller_death"
+        ]
+      }
+    },
+
+    "component_groups": {
+
+    "myth:day_spawn":{
+      "minecraft:skin_id": {
+        "value": 0
+      }
+    },
+
+    "myth:night_spawn":{
+      "minecraft:skin_id": {
+        "value": 1
+      }
+    },
+	  
+	  //MUSIC
+	  "myth:quiet": {
+	    "minecraft:skin_id": { "value": 0 },
+	    "minecraft:environment_sensor": {
+		  "triggers": [
+            {
+              "filters": { "test": "has_tag", "subject": "self", "value": "music_main" },
+              "event": "myth:music_main"
+            },
+		    {
+              "filters": { "test": "has_tag", "subject": "self", "value": "music_vampire" },
+              "event": "myth:music_vampire"
+            },
+            {
+              "filters": { "test": "has_tag", "subject": "self", "value": "music_shop" },
+              "event": "myth:music_shop"
+            }
+          ]
+	    }
+	  },
+	  
+	  "myth:music_main": {
+	    "minecraft:skin_id": { "value": 1 },
+		"minecraft:environment_sensor": {
+		  "triggers": [
+            {
+              "filters": { "test": "has_tag", "subject": "self", "operator": "not", "value": "music_main" },
+              "event": "myth:quiet"
+            }
+          ]
+	    }
+	  },
+	  "myth:music_vampire": {
+	    "minecraft:skin_id": { "value": 2 },
+		"minecraft:environment_sensor": {
+		  "triggers": [
+            {
+              "filters": { "test": "has_tag", "subject": "self", "operator": "not", "value": "music_vampire" },
+              "event": "myth:quiet"
+            }
+          ]
+	    }
+	  },
+	  "myth:music_shop": {
+	    "minecraft:skin_id": { "value": 3 },
+		"minecraft:environment_sensor": {
+		  "triggers": [
+            {
+              "filters": { "test": "has_tag", "subject": "self", "operator": "not", "value": "music_shop" },
+              "event": "myth:quiet"
+            }
+          ]
+	    }
+	  },
+	  
+	  //PARRIED
+	  "myth:parried": {
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "weakness",
+              "duration": 3,
+			  "amplifier": 10,
+			  "visible": false
+            },
+			{
+              "effect": "haste",
+              "duration": 3,
+			  "amplifier": 10,
+			  "visible": false
+            },
+			{
+              "effect": "mining_fatigue",
+              "duration": 3,
+			  "amplifier": 10,
+			  "visible": false
+            }
+          ]
+        },
+		"minecraft:timer": {
+          "time": 3.0,
+          "looping": true,
+          "time_down_event": {
+            "event": "myth:end_parried",
+            "target": "self"
+          }
+        }
+	  },
+	  
+	  "myth:end_parried": {
+	    "minecraft:spell_effects": {
+          "remove_effects": [ "weakness", "haste", "mining_fatigue" ]
+        }
+	  },
+	  
+	  //GRABBED
+	  "myth:grabbed": {
+	    "minecraft:knockback_resistance": { "value": 1.0 },
+		"minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "slowness",
+              "duration": 1,
+			  "amplifier": 10,
+			  "visible": false
+            }
+          ]
+        },
+		"minecraft:timer": {
+          "time": 0.65,
+          "looping": true,
+          "time_down_event": {
+            "event": "myth:end_grabbed",
+            "target": "self"
+          }
+        }
+	  },
+	  
+	  //THRUSTED
+	  "myth:thrusted": {
+	    "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "weakness",
+              "duration": 4,
+			  "amplifier": 1,
+			  "visible": true
+            }
+          ]
+        },
+		"minecraft:timer": {
+          "time": 0.0,
+          "looping": true,
+          "time_down_event": {
+            "event": "myth:end_thrusted",
+            "target": "self"
+          }
+        }
+	  },
+	  
+	  //KNOCKBACK RESET
+	  "myth:reset_knockback": { "minecraft:knockback_resistance": { "value": 0.0 } },
+	  
+	  //DAMAGE
+      "myth:damage_1": { "minecraft:attack": { "damage": 1 } },
+      "myth:damage_2": { "minecraft:attack": { "damage": 2 } },
+      "myth:damage_3": { "minecraft:attack": { "damage": 3 } },
+      "myth:damage_4": { "minecraft:attack": { "damage": 4 } },
+      "myth:damage_5": { "minecraft:attack": { "damage": 5 } },
+      "myth:damage_6": { "minecraft:attack": { "damage": 6 } },
+      "myth:damage_7": { "minecraft:attack": { "damage": 7 } },
+      "myth:damage_8": { "minecraft:attack": { "damage": 8 } },
+      "myth:damage_9": { "minecraft:attack": { "damage": 9 } },
+      "myth:damage_10": { "minecraft:attack": { "damage": 10 } },
+      "myth:damage_11": { "minecraft:attack": { "damage": 11 } },
+      "myth:damage_12": { "minecraft:attack": { "damage": 12 } },
+      "myth:damage_13": { "minecraft:attack": { "damage": 13 } },
+      "myth:damage_14": { "minecraft:attack": { "damage": 14 } },
+      "myth:damage_15": { "minecraft:attack": { "damage": 15 } },
+      "myth:damage_16": { "minecraft:attack": { "damage": 16 } },
+      "myth:damage_17": { "minecraft:attack": { "damage": 17 } },
+      "myth:damage_18": { "minecraft:attack": { "damage": 18 } },
+      "myth:damage_19": { "minecraft:attack": { "damage": 19 } },
+      "myth:damage_20": { "minecraft:attack": { "damage": 20 } },
+      "myth:damage_21": { "minecraft:attack": { "damage": 21 } },
+      "myth:damage_22": { "minecraft:attack": { "damage": 22 } },
+      "myth:damage_23": { "minecraft:attack": { "damage": 23 } },
+      "myth:damage_24": { "minecraft:attack": { "damage": 24 } },
+      "myth:damage_25": { "minecraft:attack": { "damage": 25 } },
+      "myth:damage_26": { "minecraft:attack": { "damage": 26 } },
+      "myth:damage_27": { "minecraft:attack": { "damage": 27 } },
+      "myth:damage_28": { "minecraft:attack": { "damage": 28 } },
+      "myth:damage_29": { "minecraft:attack": { "damage": 29 } },
+      "myth:damage_30": { "minecraft:attack": { "damage": 30 } },
+      "myth:damage_31": { "minecraft:attack": { "damage": 31 } },
+      "myth:damage_32": { "minecraft:attack": { "damage": 32 } },
+	
+	  //DEFAULTS
+      "minecraft:add_bad_omen": {
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "bad_omen",
+              "duration": 6000,
+              "display_on_screen_animation": true
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": [ 0.0, 0.0 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:clear_add_bad_omen",
+            "target": "self"
+          }
+        }
+      },
+      "minecraft:clear_bad_omen_spell_effect": {
+        "minecraft:spell_effects": {
+        }
+      },
+      "minecraft:raid_trigger": {
+        "minecraft:raid_trigger": {
+          "triggered_event": {
+            "event": "minecraft:remove_raid_trigger",
+            "target": "self"
+          }
+        },
+        "minecraft:spell_effects": {
+          "remove_effects": "bad_omen"
+        }
+      }
+    },
+
+    "components": {
+
+      "minecraft:environment_sensor": {
+        "triggers":[
+          {
+            "filters":{
+              "test":"is_daytime",
+              "value":false
+            },
+            "event": "myth:night_spawn_rules"
+          },
+          {
+            "filters":{
+              "test":"is_daytime",
+              "value":true
+            },
+            "event": "myth:day_spawn_rules"
+          }
+        ]
+      },
+
+      "minecraft:experience_reward": {
+        "on_death": "Math.Min(query.player_level * 7, 100)"
+      },
+	  "minecraft:knockback_resistance": { "value": -4.0 },
+      "minecraft:type_family": {
+        "family": [ "player" ]
+      },
+      "minecraft:is_hidden_when_invisible": {
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:movement": {
+        "value": 0.1
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:attack": {
+        "damage": 1
+      },
+      "minecraft:player.saturation": {
+        "value": 20
+      },
+      "minecraft:player.exhaustion": {
+        "value": 0,
+        "max": 4
+      },
+      "minecraft:player.level": {
+        "value": 0,
+        "max": 24791
+      },
+      "minecraft:player.experience": {
+        "value": 0,
+        "max": 1
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": -1,
+        "inhale_time": 3.75,
+        "generates_bubbles": false
+      },
+      "minecraft:nameable": {
+        "always_show": true,
+        "allow_name_tag_renaming": false
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:insomnia": {
+        "days_until_insomnia": 3
+      },
+      "minecraft:rideable": {
+        "seat_count": 2,
+        "family_types": [
+          "parrot_tame"
+        ],
+        "pull_in_entities": true,
+        "seats": [
+          {
+            "position": [ 0.4, -0.2, -0.1 ],
+            "min_rider_count": 0,
+            "max_rider_count": 0,
+            "lock_rider_rotation": 0
+          },
+          {
+            "position": [ -0.4, -0.2, -0.1 ],
+            "min_rider_count": 1,
+            "max_rider_count": 2,
+            "lock_rider_rotation": 0
+          }
+        ]
+      },
+      "minecraft:scaffolding_climber": {},
+	  
+	  //immune to helper spell orb
+	  "minecraft:damage_sensor": {
+		"triggers": [
+		  {
+            "on_damage": {
+              "filters": { "test": "is_family", "subject": "other", "value": "helper_spell_orb" }
+            },
+            "deals_damage": false
+          }
+		]
+	  }
+	  
+    },
+
+    "events": {
+
+    "myth:day_spawn_rules":{
+      "remove": {
+        "component_groups": [ "myth:night_spawn" ]
+      },
+      "add": {
+        "component_groups": [ "myth:day_spawn" ]
+      }
+    },
+
+    "myth:night_spawn_rules": {
+      "remove": {
+        "component_groups": [ "myth:day_spawn" ]
+      },
+      "add": {
+        "component_groups": [ "myth:night_spawn" ]
+      }
+    },
+	  
+	  //PARRIED
+	  "myth:parried": { "add": { "component_groups": [ "myth:parried" ] } },
+	  "myth:end_parried": { "remove": { "component_groups": [ "myth:parried", "myth:grabbed", "myth:thrusted" ] }, "add": { "component_groups": [ "myth:end_parried", "myth:reset_knockback" ] } },
+	  
+	  //GRABBED
+	  "myth:grabbed": { "add": { "component_groups": [ "myth:grabbed" ] } },
+	  "myth:end_grabbed": { "remove": { "component_groups": [ "myth:parried", "myth:grabbed", "myth:thrusted" ] }, "add": { "component_groups": [ "myth:reset_knockback" ] } },
+	  
+	  //THRUSTED
+	  "myth:thrusted": { "add": { "component_groups": [ "myth:thrusted" ] } },
+	  "myth:end_thrusted": { "remove": { "component_groups": [ "myth:parried", "myth:grabbed", "myth:thrusted" ] }, "add": { "component_groups": [ "myth:reset_knockback" ] } },
+	  
+	  //MUSIC
+	  "myth:quiet": { "add": { "component_groups": [ "myth:quiet" ] } },
+	  "myth:music_main": { "add": { "component_groups": [ "myth:music_main" ] } },
+	  "myth:music_vampire": { "add": { "component_groups": [ "myth:music_vampire" ] } },
+	  "myth:music_shop": { "add": { "component_groups": [ "myth:music_shop" ] } },
+	  
+	  //DAMAGE
+      "myth:damage_1": { "add": { "component_groups": [ "myth:damage_1" ] } },
+      "myth:damage_2": { "add": { "component_groups": [ "myth:damage_2" ] } },
+      "myth:damage_3": { "add": { "component_groups": [ "myth:damage_3" ] } },
+      "myth:damage_4": { "add": { "component_groups": [ "myth:damage_4" ] } },
+      "myth:damage_5": { "add": { "component_groups": [ "myth:damage_5" ] } },
+      "myth:damage_6": { "add": { "component_groups": [ "myth:damage_6" ] } },
+      "myth:damage_7": { "add": { "component_groups": [ "myth:damage_7" ] } },
+      "myth:damage_8": { "add": { "component_groups": [ "myth:damage_8" ] } },
+      "myth:damage_9": { "add": { "component_groups": [ "myth:damage_9" ] } },
+      "myth:damage_10": { "add": { "component_groups": [ "myth:damage_10" ] } },
+      "myth:damage_11": { "add": { "component_groups": [ "myth:damage_11" ] } },
+      "myth:damage_12": { "add": { "component_groups": [ "myth:damage_12" ] } },
+      "myth:damage_13": { "add": { "component_groups": [ "myth:damage_13" ] } },
+      "myth:damage_14": { "add": { "component_groups": [ "myth:damage_14" ] } },
+      "myth:damage_15": { "add": { "component_groups": [ "myth:damage_15" ] } },
+      "myth:damage_16": { "add": { "component_groups": [ "myth:damage_16" ] } },
+      "myth:damage_17": { "add": { "component_groups": [ "myth:damage_17" ] } },
+      "myth:damage_18": { "add": { "component_groups": [ "myth:damage_18" ] } },
+      "myth:damage_19": { "add": { "component_groups": [ "myth:damage_19" ] } },
+      "myth:damage_20": { "add": { "component_groups": [ "myth:damage_20" ] } },
+      "myth:damage_21": { "add": { "component_groups": [ "myth:damage_21" ] } },
+      "myth:damage_22": { "add": { "component_groups": [ "myth:damage_22" ] } },
+      "myth:damage_23": { "add": { "component_groups": [ "myth:damage_23" ] } },
+      "myth:damage_24": { "add": { "component_groups": [ "myth:damage_24" ] } },
+      "myth:damage_25": { "add": { "component_groups": [ "myth:damage_25" ] } },
+      "myth:damage_26": { "add": { "component_groups": [ "myth:damage_26" ] } },
+      "myth:damage_27": { "add": { "component_groups": [ "myth:damage_27" ] } },
+      "myth:damage_28": { "add": { "component_groups": [ "myth:damage_28" ] } },
+      "myth:damage_29": { "add": { "component_groups": [ "myth:damage_29" ] } },
+      "myth:damage_30": { "add": { "component_groups": [ "myth:damage_30" ] } },
+      "myth:damage_31": { "add": { "component_groups": [ "myth:damage_31" ] } },
+      "myth:damage_32": { "add": { "component_groups": [ "myth:damage_32" ] } },
+	  
+	  //DEFAULTS
+      "minecraft:gain_bad_omen": {
+        "add": {
+          "component_groups": [
+            "minecraft:add_bad_omen"
+          ]
+        }
+      },
+      "minecraft:clear_add_bad_omen": {
+        "remove": {
+          "component_groups": [
+            "minecraft:add_bad_omen"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:clear_bad_omen_spell_effect"
+          ]
+        }
+      },
+      "minecraft:trigger_raid": {
+        "add": {
+          "component_groups": [ "minecraft:raid_trigger" ]
+        }
+      },
+      "minecraft:remove_raid_trigger": {
+        "remove": {
+          "component_groups": [ "minecraft:raid_trigger" ]
+        }
+      }
+	  
+    }
+  }
+}
+
+
+
+

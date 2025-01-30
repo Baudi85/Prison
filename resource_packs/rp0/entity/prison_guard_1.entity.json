@@ -1,0 +1,93 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+	
+      "identifier": "myth:prison_guard_1",
+      "spawn_egg": { "base_color": "#e3f3f4", "overlay_color": "#95cb69" },
+	  "materials": {
+	    "default": "entity_alphatest",
+		"healthbar": "player_animated"
+	  },
+      "geometry": {
+		"default": "geometry.prison_guard_base",
+		"healthbar_background": "geometry.healthbar.background",
+		"healthbar": "geometry.healthbar.healthbar",
+		"damage1": "geometry.healthbar.damage1",
+		"damage2": "geometry.healthbar.damage2",
+		"damage3": "geometry.healthbar.damage3"
+	  },
+	  "textures": {
+	    "default": "textures/entity/prison_guard_base",
+		"healthbar": "textures/healthbar/healthbar",
+		"damage": "textures/healthbar/damage"
+	  },
+      "render_controllers": [
+	    "controller.render.myth",
+		{ "controller.render.healthbar_background": "variable.health_vis" },
+		{ "controller.render.healthbar": "variable.health_vis" },
+		{ "controller.render.damage1": "variable.damage_vis" },
+		{ "controller.render.damage2": "variable.damage_vis" },
+		{ "controller.render.damage3": "variable.damage_vis" }
+	  ],
+      
+	  
+	  "scripts": {
+		"scale": "variable.size",
+		"initialize": [
+		  
+		  //SKELETON
+		  "variable.attack_random = 0;",
+		  "variable.size = Math.random(0.9, 1.1);",
+		  
+		  
+		  //HEALTHBAR
+		  "variable.health_percent = 1 - (query.health / query.max_health);",
+		  "variable.healthbar_height = 14 + variable.size;",
+		  "variable.health_vis = 0;",
+		  "variable.damage_vis = 0;",
+		  "variable.current_health = query.health;",
+		  "variable.total_damage = 0;",
+		  "variable.damage_time = 0;"
+		  
+		],
+		"pre_animation": [
+		  
+		  //HEALTHBAR
+		  "variable.health_rotx = query.rotation_to_camera(0) + 30;",
+		  "variable.health_roty = query.rotation_to_camera(1) - query.body_y_rotation;",
+		  "variable.health_posy = variable.health_rotx > 10 ? -(variable.health_rotx / 80) * 8 * Math.cos(variable.health_roty) : 0;",
+		  "variable.health_posx = variable.health_rotx > 10 ? -(variable.health_rotx / 80) * 8 * Math.sin(variable.health_roty) : 0;",
+		  "variable.health_percent = 1 - (query.health / query.max_health);",
+		  "variable.health_vis = variable.health_percent && !query.mark_variant && (query.distance_from_camera <= 40 || variable.damage_vis);",
+		  
+		  "variable.current_health != query.health ? { variable.damage_vis = 1; variable.damage_time = query.life_time + 2.5; variable.total_damage = Math.clamp(Math.round(variable.total_damage + variable.current_health - query.health), 0, 999); variable.current_health = query.health; };",
+		  "variable.damage_vis && query.life_time > variable.damage_time ? { variable.damage_vis = 0; variable.total_damage = 0; };"
+		  
+		],
+		"animate": [
+		  { "healthbar_orientation": "variable.health_vis" },
+		  "root"
+		]
+	  },
+      "animations": {
+		"healthbar_orientation": "animation.myth.healthbar.orientation",
+		"root": "controller.animation.myth.prison_guard_base.root",
+		"controller_move": "controller.animation.myth.general.move",
+		"idle": "animation.myth.prison_guard_base.idle",
+		"walk": "animation.myth.prison_guard_base.walk",
+		"attack_1": "animation.myth.prison_guard_base.attack_1",
+		"attack_2": "animation.myth.prison_guard_base.attack_2",
+		"attack_heavy": "animation.myth.prison_guard_base.attack_heavy",
+		"death": "animation.myth.prison_guard_base.death"
+      },
+	  "particle_effects": {
+	    "death": "myth:death"
+	  },
+	  "sound_effects": {
+		"death": "prison.myth.guard.guard_death",
+		"hit": "prison.myth.guard.guard_hit"
+	  }	  	  
+    }
+  }
+}

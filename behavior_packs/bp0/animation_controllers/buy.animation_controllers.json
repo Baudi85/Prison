@@ -1,0 +1,262 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+	
+		"controller.animation.buy1": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "buy_reset_animation" ],
+					"transitions": [ 
+						{ "buy1": "q.is_sheared" }
+					]
+				},
+				"buy1": {
+					"on_exit": [ "@s myth:clear_buy" ],
+                    "animations": ["buy1_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.buy2": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "buy_reset_animation" ],
+					"transitions": [ 
+						{ "buy2": "q.is_sheared" }
+					]
+				},
+				"buy2": {
+					"on_exit": [ "@s myth:clear_buy" ],
+                    "animations": ["buy2_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.buy3": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "buy_reset_animation" ],
+					"transitions": [ 
+						{ "buy3": "q.is_sheared" }
+					]
+				},
+				"buy3": {
+					"on_exit": [ "@s myth:clear_buy" ],
+                    "animations": ["buy3_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.buy4": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "buy_reset_animation" ],
+					"transitions": [ 
+						{ "buy4": "q.is_sheared" }
+					]
+				},
+				"buy4": {
+					"on_exit": [ "@s myth:clear_buy" ],
+                    "animations": ["buy4_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.buy5": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "buy_reset_animation" ],
+					"transitions": [ 
+						{ "buy5": "q.is_sheared" }
+					]
+				},
+				"buy5": {
+					"on_exit": [ "@s myth:clear_buy" ],
+                    "animations": ["buy5_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.buy6": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "buy_reset_animation" ],
+					"transitions": [ 
+						{ "buy6": "q.is_sheared" }
+					]
+				},
+				"buy6": {
+					"on_exit": [ "@s myth:clear_buy" ],
+                    "animations": ["buy6_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.buy7": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "buy_reset_animation" ],
+					"transitions": [ 
+						{ "buy7": "q.is_sheared" }
+					]
+				},
+				"buy7": {
+					"on_exit": [ "@s myth:clear_buy" ],
+                    "animations": ["buy7_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.buy8": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "buy_reset_animation" ],
+					"transitions": [ 
+						{ "buy8": "q.is_sheared" }
+					]
+				},
+				"buy8": {
+					"on_exit": [ "@s myth:clear_buy" ],
+                    "animations": ["buy8_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.buy9": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "buy_reset_animation" ],
+					"transitions": [ 
+						{ "buy9": "q.is_sheared" }
+					]
+				},
+				"buy9": {
+					"on_exit": [ "@s myth:clear_buy" ],
+                    "animations": ["buy9_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.buy10": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "buy_reset_animation" ],
+					"transitions": [ 
+						{ "buy10": "q.is_sheared" }
+					]
+				},
+				"buy10": {
+					"on_exit": [ "@s myth:clear_buy" ],
+                    "animations": ["buy10_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.buy11": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "buy_reset_animation" ],
+					"transitions": [ 
+						{ "buy11": "q.is_sheared" }
+					]
+				},
+				"buy11": {
+					"on_exit": [ "@s myth:clear_buy" ],
+                    "animations": ["buy11_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.buy12": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "buy_reset_animation" ],
+					"transitions": [ 
+						{ "buy12": "q.is_sheared" }
+					]
+				},
+				"buy12": {
+					"on_exit": [ "@s myth:clear_buy" ],
+                    "animations": ["buy12_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.buy13": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "buy_reset_animation" ],
+					"transitions": [ 
+						{ "buy13": "q.is_sheared" }
+					]
+				},
+				"buy13": {
+					"on_exit": [ "@s myth:clear_buy" ],
+                    "animations": ["buy13_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.buy14": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "buy_reset_animation" ],
+					"transitions": [ 
+						{ "buy14": "q.is_sheared" }
+					]
+				},
+				"buy14": {
+					"on_exit": [ "@s myth:clear_buy" ],
+                    "animations": ["buy14_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.buy15": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "buy_reset_animation" ],
+					"transitions": [ 
+						{ "buy15": "q.is_sheared" }
+					]
+				},
+				"buy15": {
+					"on_exit": [ "@s myth:clear_buy" ],
+                    "animations": ["buy15_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.buy16": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "buy_reset_animation" ],
+					"transitions": [ 
+						{ "buy16": "q.is_sheared" }
+					]
+				},
+				"buy16": {
+					"on_exit": [ "@s myth:clear_buy" ],
+                    "animations": ["buy16_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        }
+	}
+}

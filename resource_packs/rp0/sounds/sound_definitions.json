@@ -1,0 +1,112 @@
+{
+   "format_version" : "1.14.0",
+   "sound_definitions" : {
+
+      //ALARM
+      "prison.myth.alarm.alarm" : {
+         "__use_legacy_max_distance" : "true",
+         "category" : "neutral",
+		 "volume" : 0.5,
+         "sounds" : [ "sounds/prison/alarm/prison_alarm_main" ]
+      },
+	  //SHOP
+      "prison.myth.buy.shop_buy" : {
+         "__use_legacy_max_distance" : "true",
+         "category" : "neutral",
+		 "volume" : 0.5,
+         "sounds" : [ "sounds/prison/shop/buy_item" ]
+      },  
+      "prison.myth.sell.shop_sell" : {
+         "__use_legacy_max_distance" : "true",
+         "category" : "neutral",
+		 "volume" : 0.5,
+         "sounds" : [ "sounds/prison/shop/sell_item" ]
+      },
+	  
+	  //UPGRADE
+      "prison.myth.generator.generator_upgrade_1" : {
+         "__use_legacy_max_distance" : "true",
+         "category" : "neutral",
+         "sounds" : [ { "name": "sounds/prison/upgrade/generator_upgrade_1", "volume" : 0.1 } ]
+      }, 
+      "prison.myth.mine.unlock_mine" : {
+         "__use_legacy_max_distance" : "true",
+         "category" : "neutral",
+         "sounds" : [ { "name" : "sounds/prison/upgrade/unlock_mine", "volume" : 0.1 } ]
+      }, 
+	  //GENERATOR
+      "prison.myth.generator.idle" : {
+         "category" : "neutral",
+         "max_distance" : 7.0,
+         "sounds" : [ { "name" : "sounds/prison/upgrade/idle", "volume" : 0.050}  ]
+      },  	    	  
+	  //GUARD
+	  "prison.myth.guard.guard_death" : {
+         "__use_legacy_max_distance" : "true",
+         "category" : "neutral",
+         "sounds" : [ 
+			{
+				"name" : "sounds/prison/guard/guard_death1",
+				"volume" : 0.5
+			},
+			{
+				"name" : "sounds/prison/guard/guard_death2",
+				"volume" : 0.5
+			},
+			{
+				"name" : "sounds/prison/guard/guard_death3",
+				"volume" : 0.5
+			}
+		 ]
+      },
+	  "prison.myth.guard.guard_hit" : {
+         "__use_legacy_max_distance" : "true",
+         "category" : "neutral",
+         "sounds" : [ 
+			{
+				"name" : "sounds/prison/guard/guard_hit1",
+				"volume" : 0.5
+			},
+			{
+				"name" : "sounds/prison/guard/guard_hit2",
+				"volume" : 0.5
+			},
+			{
+				"name" : "sounds/prison/guard/guard_hit3",
+				"volume" : 0.5
+			}
+		 ]
+      },
+
+	  //MUSIC
+	  	"prison.myth.music.main": {
+		"category": "music",
+		"min_distance": 1000.0,
+		"max_distance": 1000.0,
+		"sounds": [ { "name": "sounds/prison/main", "load_on_low_memory": true, "stream": true, "volume": 0.03 } ]
+	}, 
+	  	"prison.myth.warden.voiceacting": {
+		"category": "music",
+		"min_distance": 1000.0,
+		"max_distance": 1000.0,
+		"sounds": [{
+			"name": "sounds/prison/usef",
+			"load_on_low_memory": true,
+			"stream": true,
+			"volume": 0.5
+		}]
+	},
+	  //SET DEFAULT MUSIC TO NOTHING
+	  "music.game" : {},
+      "music.game.creative" : {},
+      "music.game.credits" : {},
+      "music.game.crimson_forest" : {},
+      "music.game.end" : {},
+      "music.game.endboss" : {},
+      "music.game.nether" : {},
+      "music.game.nether_wastes" : {},
+      "music.game.soulsand_valley" : {},
+      "music.game.water" : {},
+      "music.menu" : {}
+   }
+}

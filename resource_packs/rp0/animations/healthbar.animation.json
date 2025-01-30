@@ -1,0 +1,17 @@
+{
+   "format_version": "1.10.0",
+   "animations": {
+   
+      "animation.myth.healthbar.orientation" : {
+			"loop" : true,
+			"bones" : {
+				"healthbar" : {
+					"rotation" : [ "variable.health_rotx", "variable.health_roty", 0.0 ],
+					"position" : [ "variable.health_posx", "variable.healthbar_height", "variable.health_posy" ],
+					"scale": "math.clamp(query.distance_from_camera, 20, 40) / 20"
+				}
+			}
+		}
+      
+   }
+}

@@ -1,0 +1,51 @@
+{
+
+  //This entity functions as a spawn anchor for hostile mobs. 
+
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "myth:spawn",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "component_groups": {
+      //Removes default death animation and sounds (use with myth:remove event)
+      "myth:remove": { "minecraft:instant_despawn": {} }
+    
+    },
+
+    
+    
+    "components": {
+
+	    "minecraft:collision_box": { "width": 0, "height": 0 },
+	    
+      "minecraft:damage_sensor": {
+        "triggers": {
+	      "cause": "all",
+		    "deals_damage": false
+        }
+	    },
+      "minecraft:spell_effects": {"add_effects": [{"effect": "invisibility", "display_on_screen_animation": true, "duration": 10 }]},
+      
+      
+      "minecraft:push_through": { "value": 1 },
+	  
+      "minecraft:physics": {},
+      "minecraft:is_hidden_when_invisible": {}
+    
+    },
+
+
+
+    "events":{
+      //"minecraft:entity_spawned": { "add":{ "component_groups": [ "myth:remove" ]}},
+
+      "myth:remove": { "add": { "component_groups": [ "myth:remove" ] } }
+    
+    }
+  }
+}

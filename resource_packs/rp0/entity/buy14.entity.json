@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+	
+      "identifier": "myth:buy14",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/buy13" },
+      "geometry": { "default": "geometry.buy1" },
+      "render_controllers": [ "controller.render.myth" ],
+      "scripts": {
+        "animate": [
+          "root"
+        ]
+        },
+          "animations": {
+			"root":"controller.animation.myth.buy1.root",
+            "idle":"animation.myth.buy1.idle",
+            "open":"animation.myth.buy1.open"
+          },
+
+      "spawn_egg": {
+        "base_color": "#e3f3f4",
+		    "overlay_color": "#95cb69"
+      },
+	  "sound_effects": {
+		"buy": "prison.myth.buy.shop_buy"
+	  }	  
+	  
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+	
+      "identifier": "myth:prestige2",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/object/prestige_2" },
+      "geometry": { "default": "geometry.prestige" },
+      "render_controllers": [ "controller.render.myth" ],
+      "spawn_egg": {
+        "base_color": "#e3f3f4",
+		"overlay_color": "#95cb69"
+      }
+	  
+    }
+  }
+}

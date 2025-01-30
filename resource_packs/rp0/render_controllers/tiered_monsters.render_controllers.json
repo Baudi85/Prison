@@ -1,0 +1,21 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    
+	"controller.render.three_tiers": {
+      "arrays": {
+        "textures": {
+          "Array.texture": [
+            "Texture.tier_0",
+			"Texture.tier_1",
+			"Texture.tier_2"
+          ]
+		}
+      },
+	  "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Array.texture[query.variant]" ]
+    }
+	
+  }
+}

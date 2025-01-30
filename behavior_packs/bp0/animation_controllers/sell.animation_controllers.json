@@ -1,0 +1,198 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+	
+		"controller.animation.sell1": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "sell_reset_animation" ],
+					"transitions": [ 
+						{ "sell1": "q.is_sheared" }
+					]
+				},
+				"sell1": {
+					"on_exit": [ "@s myth:clear_sell" ],
+                    "animations": ["sell1_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.sell2": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "sell_reset_animation" ],
+					"transitions": [ 
+						{ "sell2": "q.is_sheared" }
+					]
+				},
+				"sell2": {
+					"on_exit": [ "@s myth:clear_sell" ],
+                    "animations": ["sell2_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.sell3": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "sell_reset_animation" ],
+					"transitions": [ 
+						{ "sell3": "q.is_sheared" }
+					]
+				},
+				"sell3": {
+					"on_exit": [ "@s myth:clear_sell" ],
+                    "animations": ["sell3_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.sell4": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "sell_reset_animation" ],
+					"transitions": [ 
+						{ "sell4": "q.is_sheared" }
+					]
+				},
+				"sell4": {
+					"on_exit": [ "@s myth:clear_sell" ],
+                    "animations": ["sell4_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.sell5": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "sell_reset_animation" ],
+					"transitions": [ 
+						{ "sell5": "q.is_sheared" }
+					]
+				},
+				"sell5": {
+					"on_exit": [ "@s myth:clear_sell" ],
+                    "animations": ["sell5_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.sell6": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "sell_reset_animation" ],
+					"transitions": [ 
+						{ "sell6": "q.is_sheared" }
+					]
+				},
+				"sell6": {
+					"on_exit": [ "@s myth:clear_sell" ],
+                    "animations": ["sell6_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.sell7": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "sell_reset_animation" ],
+					"transitions": [ 
+						{ "sell7": "q.is_sheared" }
+					]
+				},
+				"sell7": {
+					"on_exit": [ "@s myth:clear_sell" ],
+                    "animations": ["sell7_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.sell8": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "sell_reset_animation" ],
+					"transitions": [ 
+						{ "sell8": "q.is_sheared" }
+					]
+				},
+				"sell8": {
+					"on_exit": [ "@s myth:clear_sell" ],
+                    "animations": ["sell8_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.sell9": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "sell_reset_animation" ],
+					"transitions": [ 
+						{ "sell9": "q.is_sheared" }
+					]
+				},
+				"sell9": {
+					"on_exit": [ "@s myth:clear_sell" ],
+                    "animations": ["sell9_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.sell10": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "sell_reset_animation" ],
+					"transitions": [ 
+						{ "sell10": "q.is_sheared" }
+					]
+				},
+				"sell10": {
+					"on_exit": [ "@s myth:clear_sell" ],
+                    "animations": ["sell10_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.sell11": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "sell_reset_animation" ],
+					"transitions": [ 
+						{ "sell11": "q.is_sheared" }
+					]
+				},
+				"sell11": {
+					"on_exit": [ "@s myth:clear_sell" ],
+                    "animations": ["sell11_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        },
+		"controller.animation.sell12": {
+			"initial_state": "inactive",
+			"states": {
+				"inactive": {
+                    "animations": [ "sell_reset_animation" ],
+					"transitions": [ 
+						{ "sell12": "q.is_sheared" }
+					]
+				},
+				"sell12": {
+					"on_exit": [ "@s myth:clear_sell" ],
+                    "animations": ["sell12_animation"],
+					"transitions": [ { "inactive": "!q.is_sheared" } ]
+                }
+			}
+        }
+	}
+}

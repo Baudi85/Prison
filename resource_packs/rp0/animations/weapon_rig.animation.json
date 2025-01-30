@@ -1,0 +1,13 @@
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.myth.weapon_rig.firstperson": {
+			"loop": true,
+			"bones": {
+				"weapon": {
+					"rotation": [-7.5, 55, -10]
+				}
+			}
+		}
+	}
+}

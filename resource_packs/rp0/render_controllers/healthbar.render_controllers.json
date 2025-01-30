@@ -1,0 +1,68 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+  
+    "controller.render.healthbar_background": {
+      "geometry": "Geometry.healthbar_background",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.healthbar" ],
+	  "is_hurt_color": { "a": 0 },
+	  "on_fire_color": { "a": 0 }
+    },
+	
+	"controller.render.healthbar": {
+      "geometry": "Geometry.healthbar",
+      "materials": [ { "*": "Material.healthbar" } ],
+      "textures": [ "Texture.healthbar" ],
+	  "uv_anim": {
+          "offset": [ "variable.health_percent * (15 / 32)", 0 ],
+          "scale": [ 1, 1 ]
+      },
+	  "is_hurt_color": { "a": 0 },
+	  "on_fire_color": { "a": 0 }
+    },
+	
+	"controller.render.damage1": {
+      "geometry": "Geometry.damage1",
+      "materials": [ { "*": "Material.healthbar" } ],
+      "textures": [
+		"Texture.damage"
+	  ],
+	  "uv_anim": {
+          "offset": [ "Math.floor((variable.total_damage >= 100 ? variable.total_damage / 100 : (variable.total_damage >= 10 ? variable.total_damage / 10 : variable.total_damage)) + 1) * (1 / 16)", 0 ],
+          "scale": [ 1, 1 ]
+      },
+	  "is_hurt_color": { "a": 0 },
+	  "on_fire_color": { "a": 0 }
+    },
+	
+	"controller.render.damage2": {
+      "geometry": "Geometry.damage2",
+      "materials": [ { "*": "Material.healthbar" } ],
+      "textures": [
+		"Texture.damage"
+	  ],
+	  "uv_anim": {
+          "offset": [ "((variable.total_damage >= 100 ? Math.floor(Math.mod(variable.total_damage / 10, 10)) : (variable.total_damage >= 10 ? Math.mod(variable.total_damage, 10) : -1)) + 1) * (1 / 16)", 0 ],
+          "scale": [ 1, 1 ]
+      },
+	  "is_hurt_color": { "a": 0 },
+	  "on_fire_color": { "a": 0 }
+    },
+	
+	"controller.render.damage3": {
+      "geometry": "Geometry.damage3",
+      "materials": [ { "*": "Material.healthbar" } ],
+      "textures": [
+		"Texture.damage"
+	  ],
+	  "uv_anim": {
+          "offset": [ "((variable.total_damage >= 100 ? Math.mod(variable.total_damage, 10) : -1) + 1) * (1 / 16)", 0 ],
+          "scale": [ 1, 1 ]
+      },
+	  "is_hurt_color": { "a": 0 },
+	  "on_fire_color": { "a": 0 }
+    }
+	
+  }
+}

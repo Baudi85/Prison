@@ -1,0 +1,122 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "myth:bus",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+	  "animations": {
+		"myth:controller_water": "controller.animation.myth.vehicle.water",
+		"myth:water_timer": "animation.myth.vehicle.water_timer"
+      },
+      "scripts": {
+        "animate": [
+		  "myth:controller_water"
+        ]
+      }
+    },
+	
+	"component_groups": {
+	
+	  //REMOVE
+	  "myth:remove": { "minecraft:instant_despawn": {} }
+	  
+	},
+	
+    "components": {
+	  
+	  //STATS
+	  "minecraft:type_family": {
+        "family": [ "vehicle" ]
+      },
+	  "minecraft:scale": {
+	    "value": 1
+	  },
+      "minecraft:collision_box": {
+        "width": 4.0,
+        "height": 4.0
+      },
+      "minecraft:health": {
+        "value": 20,
+		"max_value": 20
+      },
+      "minecraft:movement": {
+        "value": 0.4
+      },
+	  "minecraft:underwater_movement": {
+        "value": 0.08
+      },
+	  
+	  //VEHICLE
+	  "minecraft:rideable": {
+        "seat_count": 5,
+		"rider_can_interact": false,
+        "family_types": [
+          "player"
+        ],
+        "seats": [
+		  {
+            "position": [0.7, 1.1, 1.8],
+			"min_rider_count": 0
+          },
+		  {
+            "position": [1.1, 1.1, 0.15],
+			"min_rider_count": 1
+          },
+		  {
+            "position": [-1.05, 1.1, 0.15],
+			"min_rider_count": 2
+          },
+		  {
+            "position": [-1.05, 1.1, -1.5],
+			"min_rider_count": 3
+          },
+		  {
+            "position": [1.1, 1.1, -1.5],
+			"min_rider_count": 4
+          }
+		]
+      },
+      "minecraft:input_ground_controlled": {
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "avoid_water": true,
+        "avoid_damage_blocks": true
+      },
+	  "minecraft:jump.static": {
+	  },
+      "minecraft:movement.basic": {
+	    "max_turn": 30
+      },
+      
+	  //GENERIC
+	  "minecraft:is_stackable": {
+	  },
+	  "minecraft:damage_sensor": {
+        "triggers": {
+	      "cause": "all",
+		  "deals_damage": false
+        }
+	  },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      }
+    },
+	
+	"events": {
+	
+	  //DEFAULTS
+	  "minecraft:entity_spawned": { "add": { "component_groups": [ "myth:bus" ] } },
+	  
+	  //REMOVE
+	  "myth:remove": { "add": { "component_groups": [ "myth:remove" ] } }
+	  
+	}
+	
+  }
+}
